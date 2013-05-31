@@ -1,7 +1,15 @@
-source :rubygems
+source "https://rubygems.org"
 
-gem 'albacore'
-gem 'cocaine'
-gem 'log4r-color'
-gem 'nokogiri'
-gem 'rake'
+group :build do
+  gem 'albacore'
+  gem 'bundler'
+  gem 'cocaine'
+  gem 'log4r-color'
+  gem 'nokogiri'
+  gem 'rake'
+end
+
+group :debugging do
+  gem 'pry'
+  gem 'pry-debugger'
+end
