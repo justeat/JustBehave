@@ -14,7 +14,7 @@ namespace JustEat.Testing.Tests.Examples
 
         protected override void When()
         {
-            _result = SUT.ToString();
+            _result = SystemUnderTest.ToString();
         }
 
         [Fact]
