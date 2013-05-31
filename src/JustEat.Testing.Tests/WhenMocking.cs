@@ -1,6 +1,7 @@
 ﻿using System;
 using Shouldly;
 using NUnit.Framework;
+using Xunit;
 
 namespace JustEat.Testing.Tests
 {
@@ -16,6 +17,18 @@ namespace JustEat.Testing.Tests
 			mock.ShouldBeTypeOf<IAmARandomThing>();
 		}
 	}
+
+    public class WhenMockingXunit
+    {
+        [Fact]
+        public void ShouldAddToDictionary()
+        {
+            var mm = new MockManager();
+            var mock = mm.Mock<IAmARandomThing>();
+            mock.ShouldNotBe(null);
+            mock.ShouldBeTypeOf<IAmARandomThing>();
+        }
+    }
 
 	public class MockManagerBehaviour : BehaviourTest<MockManager>
 	{
