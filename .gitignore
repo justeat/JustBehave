@@ -1,0 +1,15 @@
+*.cache
+*.log
+*.orig
+*.sublime-workspace
+*.suo
+*.user
+_ReSharper*
+AssemblyInfo.cs
+bin
+obj
+out
+packages
+previous_ndepend
+
+!3rdparty/*

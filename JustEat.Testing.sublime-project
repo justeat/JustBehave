@@ -1,0 +1,25 @@
+{
+	"folders": [{
+    "file_exclude_patterns": [
+      "*.bin",
+      "*.chm",
+      "*.dll",
+      "*.exe",
+      "*.lex",
+      "*.user"
+    ],
+		"folder_exclude_patterns": [
+      "bin",
+      "obj",
+      "out",
+      "packages",
+      "_NCrunch*",
+      "_ReSharper*"
+    ],
+		"path": "."
+	}],
+	"settings": {
+		"tab_size": 2,
+		"translate_tabs_to_spaces": true
+	}
+}
