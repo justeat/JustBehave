@@ -9,7 +9,7 @@ namespace JustEat.Testing.Tests.Examples
 
         protected override void Given()
         {
-            _result = "foo";
+            _result = "food";
         }
 
         protected override void When()
@@ -26,7 +26,7 @@ namespace JustEat.Testing.Tests.Examples
         [Fact]
         public void ShouldHaveChangedFromInitial()
         {
-            _result.ShouldNotBe("foo");
+            _result.ShouldNotBe("food");
         }
     }
 

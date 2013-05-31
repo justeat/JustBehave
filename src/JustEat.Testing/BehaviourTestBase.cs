@@ -5,7 +5,6 @@ using NLog;
 using NLog.Config;
 using NLog.Targets;
 using Ploeh.AutoFixture;
-using Ploeh.AutoFixture.AutoRhinoMock;
 
 namespace JustEat.Testing
 {
@@ -26,12 +25,12 @@ namespace JustEat.Testing
             Log = LogManager.GetCurrentClassLogger();
 
             Fixture = new Fixture();
-            Customize(Fixture);
+            CustomizeAutoFixture(Fixture);
         }
 
-        protected virtual void Customize(Fixture fixture)
+        protected virtual void CustomizeAutoFixture(Fixture fixture)
         {
-            fixture.Customize(new AutoRhinoMockCustomization());
+            
         }
 
         protected TSystemUnderTest SystemUnderTest { get; private set; }

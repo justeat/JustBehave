@@ -1,4 +1,6 @@
-﻿using Shouldly;
+﻿using Ploeh.AutoFixture;
+using Ploeh.AutoFixture.AutoRhinoMock;
+using Shouldly;
 using Xunit;
 
 namespace JustEat.Testing.Tests.Examples
@@ -14,13 +16,24 @@ namespace JustEat.Testing.Tests.Examples
 
         protected override void When()
         {
-            _result = SystemUnderTest.Foo();
+            _result = SystemUnderTest.Food();
+        }
+
+        protected override void CustomizeAutoFixture(Fixture fixture)
+        {
+            fixture.Customize(new AutoRhinoMockCustomization());
         }
 
         [Fact]
         public void ShouldReadFoo()
         {
-            _result.ShouldBe("foo");
+            _result.ShouldBe("food");
+        }
+
+        [Fact]
+        public void ShouldSupplyDependency()
+        {
+            SystemUnderTest.SomethingElse.ShouldNotBe(null);
         }
     }
 
@@ -33,9 +46,14 @@ namespace JustEat.Testing.Tests.Examples
             _somethingElse = somethingElse;
         }
 
-        public string Foo()
+        public ISomethingElse SomethingElse
         {
-            return "foo";
+            get { return _somethingElse; }
+        }
+
+        public string Food()
+        {
+            return "food";
         }
     }
 
