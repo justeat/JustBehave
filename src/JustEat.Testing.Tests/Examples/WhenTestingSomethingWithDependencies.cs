@@ -1,5 +1,6 @@
 ﻿using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoRhinoMock;
+using Rhino.Mocks;
 using Shouldly;
 using Xunit;
 
@@ -8,15 +9,20 @@ namespace JustEat.Testing.Tests.Examples
     public class WhenTestingSomethingWithDependencies : XBehaviourTest<Something>
     {
         private string _result;
+        private ISomethingElse _fake;
+        private string _speech;
 
         protected override void Given()
         {
             _result = "bar";
+            _fake = Fixture.Freeze<ISomethingElse>();
+            _fake.Expect(x => x.SayHi()).Return("hi");
         }
 
         protected override void When()
         {
             _result = SystemUnderTest.Food();
+            _speech = SystemUnderTest.SomethingElse.SayHi();
         }
 
         protected override void CustomizeAutoFixture(Fixture fixture)
@@ -34,6 +40,21 @@ namespace JustEat.Testing.Tests.Examples
         public void ShouldSupplyDependency()
         {
             SystemUnderTest.SomethingElse.ShouldNotBe(null);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToReturnSameInstanceOfDependency()
+        {
+            var expected = Fixture.Create<ISomethingElse>().ToString();
+            var actual = SystemUnderTest.SomethingElse.ToString();
+            actual.ShouldBe(expected);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToRunExpectationAndVerify()
+        {
+            _speech.ShouldBe("hi");
+            _fake.VerifyAllExpectations();
         }
     }
 
@@ -57,5 +78,8 @@ namespace JustEat.Testing.Tests.Examples
         }
     }
 
-    public interface ISomethingElse { }
+    public interface ISomethingElse
+    {
+        string SayHi();
+    }
 }

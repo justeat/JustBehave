@@ -57,11 +57,6 @@ namespace JustEat.Testing
             ExceptionMode = ExceptionMode.Record;
         }
 
-        protected TMock Mock<TMock>() where TMock : class
-        {
-            return Fixture.Create<TMock>();
-        }
-
         [DebuggerStepThrough]
         protected void Setup()
         {
