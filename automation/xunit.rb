@@ -5,6 +5,7 @@ def setup_xunit(params={})
   out = params[:out] || 'out'
   reports = "#{out}/unit-tests"
   glob = params[:glob] || "src/*/bin/#{configuration}/*.Tests.dll"
+
   namespace :test do
     desc 'Run all xunit-tests'
     xunit do |xunit|
@@ -14,7 +15,7 @@ def setup_xunit(params={})
       xunit.command = candidate_runners.first
       xunit.assemblies = FileList.new glob
       xunit.html_output = reports
-      xunit.options = ["/nunit #{reports.gsub('/','\\')}/JustEat.Client.Tests.dll.nunit.xml"]
+      xunit.options = ["/nunit #{reports.gsub('/','\\')}/JustEat.Testing.Tests.dll.nunit.xml"]
       xunit.options << "/teamcity" if is_build_agent?
       xunit.log_level = :verbose
     end
