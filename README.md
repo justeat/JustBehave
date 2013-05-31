@@ -9,7 +9,7 @@ See [contribution guidelines](CONTRIBUTING.md).
 
 Standard build automation - `bundle install && bundle exec rake clean clobber default`.
 
-## Delivery
+##  Delivery
 <table>
   <tbody>
     <tr>
