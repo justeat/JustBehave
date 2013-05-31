@@ -10,7 +10,6 @@ namespace JustEat.Testing
 {
     public abstract class BehaviourTestBase<TSystemUnderTest>
     {
-        // ReSharper disable InconsistentNaming
         protected readonly Fixture Fixture;
         protected ExceptionMode ExceptionMode = ExceptionMode.Throw;
 
@@ -28,15 +27,11 @@ namespace JustEat.Testing
             CustomizeAutoFixture(Fixture);
         }
 
-        protected virtual void CustomizeAutoFixture(Fixture fixture)
-        {
-            
-        }
-
         protected TSystemUnderTest SystemUnderTest { get; private set; }
 
         protected Logger Log { get; set; }
         protected Exception ThrownException { get; set; }
+        protected virtual void CustomizeAutoFixture(Fixture fixture) {}
         protected abstract void Given();
 
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Justification = "When really is the best name for this message")]

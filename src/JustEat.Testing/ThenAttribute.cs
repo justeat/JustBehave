@@ -3,8 +3,6 @@ using NUnit.Framework;
 
 namespace JustEat.Testing
 {
-	[AttributeUsage(AttributeTargets.Method)]
-	public sealed class ThenAttribute : TestAttribute
-	{
-	}
+    [AttributeUsage(AttributeTargets.Method)]
+    public sealed class ThenAttribute : TestAttribute {}
 }

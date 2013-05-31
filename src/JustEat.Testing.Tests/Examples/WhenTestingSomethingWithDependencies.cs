@@ -8,8 +8,8 @@ namespace JustEat.Testing.Tests.Examples
 {
     public class WhenTestingSomethingWithDependencies : XBehaviourTest<Something>
     {
-        private string _result;
         private ISomethingElse _fake;
+        private string _result;
         private string _speech;
 
         protected override void Given()
