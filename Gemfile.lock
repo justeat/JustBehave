@@ -1,0 +1,29 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    albacore (0.2.7)
+      rubyzip (~> 0.9)
+    cocaine (0.2.1)
+    colorize (0.5.8)
+    log4r-color (1.2)
+      colorize
+      scribe
+    nokogiri (1.5.5-x86-mingw32)
+    rake (0.9.2.2)
+    rubyzip (0.9.5)
+    scribe (0.2.4)
+      rake
+      thrift_client (~> 0.6)
+    thrift (0.7.0)
+    thrift_client (0.7.1)
+      thrift (~> 0.7.0)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  albacore
+  cocaine
+  log4r-color
+  nokogiri
+  rake
