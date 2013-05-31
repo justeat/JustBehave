@@ -1,3 +1,9 @@
+#6.0.0
+* Introduced XUnit-based `XBehaviourTest<TSut>`, pushing most functionality down into base class `BehaviourTestBase<TSut>`.
+* Removed hand-rolled auto-mocking in favour of [AutoFixture](https://github.com/AutoFixture/AutoFixture).
+  * Allowed customisation of auto-mocking by new `CustomizeAutoFixture` virtual method - inherit from the base class of your choice.
+* Updated automation.
+
 #5.0.3
 * Dropped evil Castle Windsor references
 
