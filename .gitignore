@@ -9,7 +9,7 @@ AssemblyInfo.cs
 bin
 obj
 out
-packages
+packages/*/*
 previous_ndepend
 
 !3rdparty/*
