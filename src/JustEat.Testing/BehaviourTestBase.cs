@@ -50,7 +50,7 @@ namespace JustEat.Testing
             ExceptionMode = ExceptionMode.Record;
         }
 
-        [DebuggerStepThrough]
+        [DebuggerNonUserCode]
         protected void Setup()
         {
             Given();
