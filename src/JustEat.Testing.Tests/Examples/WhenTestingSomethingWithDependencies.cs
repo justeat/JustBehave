@@ -21,7 +21,7 @@ namespace JustEat.Testing.Tests.Examples
 
         protected override void When()
         {
-            _result = SystemUnderTest.Food();
+            _result = Something.Food();
             _speech = SystemUnderTest.SomethingElse.SayHello();
         }
 
@@ -72,7 +72,7 @@ namespace JustEat.Testing.Tests.Examples
             get { return _somethingElse; }
         }
 
-        public string Food()
+        public static string Food()
         {
             return "food";
         }
