@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Examples\WhenSomethingPasses.cs" />
     <Compile Include="Examples\WhenTestingForExceptions.cs" />
+    <Compile Include="Examples\WhenTestingForExceptionsFromConstructors.cs" />
     <Compile Include="Examples\WhenTestingSomethingWithDependencies.cs" />
     <Compile Include="GlobalSuppression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
