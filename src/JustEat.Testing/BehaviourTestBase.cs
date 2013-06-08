@@ -55,10 +55,9 @@ namespace JustEat.Testing
         {
             Given();
 
-            SystemUnderTest = CreateSystemUnderTest();
-
             try
             {
+                SystemUnderTest = CreateSystemUnderTest();
                 When();
             }
             catch (Exception ex)
