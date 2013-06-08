@@ -33,6 +33,9 @@
     <DefineConstants>$(CommonDefineConstants)</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Ploeh.AutoFixture, Version=3.2.1.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\AutoFixture.3.2.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
@@ -54,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Examples\WhenSomethingPasses.cs" />
+    <Compile Include="Examples\WhenTestingForExceptions.cs" />
     <Compile Include="Examples\WhenTestingSomethingWithDependencies.cs" />
     <Compile Include="GlobalSuppression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
