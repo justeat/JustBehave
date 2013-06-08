@@ -16,13 +16,13 @@ namespace JustEat.Testing.Tests.Examples
         {
             _result = "bar";
             _fake = Fixture.Freeze<ISomethingElse>();
-            _fake.Expect(x => x.SayHi()).Return("hi");
+            _fake.Expect(x => x.SayHello()).Return("hi");
         }
 
         protected override void When()
         {
             _result = SystemUnderTest.Food();
-            _speech = SystemUnderTest.SomethingElse.SayHi();
+            _speech = SystemUnderTest.SomethingElse.SayHello();
         }
 
         protected override void CustomizeAutoFixture(Fixture fixture)
@@ -31,7 +31,7 @@ namespace JustEat.Testing.Tests.Examples
         }
 
         [Fact]
-        public void ShouldReadFoo()
+        public void ShouldReadFood()
         {
             _result.ShouldBe("food");
         }
@@ -80,6 +80,6 @@ namespace JustEat.Testing.Tests.Examples
 
     public interface ISomethingElse
     {
-        string SayHi();
+        string SayHello();
     }
 }

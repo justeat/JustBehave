@@ -16,6 +16,13 @@ namespace JustEat.Testing
         public void Dispose()
         {
             PostAssertTeardown();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            
         }
     }
 }
