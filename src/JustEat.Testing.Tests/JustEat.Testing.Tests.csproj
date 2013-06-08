@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ploeh.AutoFixture">
-      <HintPath>..\..\packages\AutoFixture.3.1.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <HintPath>..\..\packages\AutoFixture.3.2.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
     </Reference>
     <Reference Include="Ploeh.AutoFixture.AutoRhinoMock">
       <HintPath>..\..\packages\AutoFixture.AutoRhinoMocks.3.1.0\lib\net40\Ploeh.AutoFixture.AutoRhinoMock.dll</HintPath>
@@ -66,10 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="BeforeBuild" Condition="!Exists('Properties\AssemblyInfo.cs')">
-    <Exec Command="bundle exec rake bootstrap" WorkingDirectory="..\..\" Condition="Exists('..\..\Rakefile.rb')" />
-  </Target>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Target Name="BeforeBuild" Condition="!Exists('Properties\AssemblyInfo.cs')">
+    <Exec Command="bundle exec rake bootstrap" WorkingDirectory="$(SolutionDir)" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
