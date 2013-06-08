@@ -2,8 +2,9 @@
 <Dictionary>
 	<Words>
 		<Recognized>
+      <Word>Aws</Word>
+      <Word>Behaviour</Word>
 			<Word>Configurator</Word>
-			<Word>Aws</Word>
 		</Recognized>
 		<Unrecognized></Unrecognized>
 		<Deprecated></Deprecated>

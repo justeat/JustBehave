@@ -10,11 +10,15 @@ namespace JustEat.Testing
 {
     public abstract class BehaviourTestBase<TSystemUnderTest>
     {
-        protected readonly Fixture Fixture;
-        protected ExceptionMode ExceptionMode = ExceptionMode.Throw;
-
+        protected Fixture Fixture { get; private set; }
+        protected ExceptionMode ExceptionMode { get; private set; }
+        protected TSystemUnderTest SystemUnderTest { get; private set; }
+        protected Logger Log { get; private set; }
+        protected Exception ThrownException { get; private set; }
+        
         protected BehaviourTestBase()
         {
+            ExceptionMode = ExceptionMode.Throw;
 #if DEBUG
             var level = LogLevel.Trace;
 #else
@@ -27,11 +31,8 @@ namespace JustEat.Testing
             CustomizeAutoFixture(Fixture);
         }
 
-        protected TSystemUnderTest SystemUnderTest { get; private set; }
-
-        protected Logger Log { get; set; }
-        protected Exception ThrownException { get; set; }
         protected virtual void CustomizeAutoFixture(Fixture fixture) {}
+        
         protected abstract void Given();
 
         [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Justification = "When really is the best name for this message")]
@@ -39,9 +40,6 @@ namespace JustEat.Testing
 
         protected virtual void Teardown() {}
 
-        /// <summary>
-        ///     Override this if TSystemUnderTest doesn't have a parameterless constructor.
-        /// </summary>
         protected virtual TSystemUnderTest CreateSystemUnderTest()
         {
             return Fixture.Create<TSystemUnderTest>();
@@ -52,7 +50,7 @@ namespace JustEat.Testing
             ExceptionMode = ExceptionMode.Record;
         }
 
-        [DebuggerStepThrough]
+        [DebuggerNonUserCode]
         protected void Setup()
         {
             Given();

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <FxCopProject Version="10.0" Name="My FxCop Project">
  <ProjectOptions>
   <SharedProject>True</SharedProject>
@@ -22,8 +22,8 @@
   <TargetFrameworkVersion>4.0</TargetFrameworkVersion>
  </ProjectOptions>
  <Targets>
-  <Target Name="$(ProjectDir)/out/AnyCPU/v4.0/Release/JustEat.Testing.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/out/AnyCPU/v4.0/Release/JustEat.Testing.Tests.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/src/JustEat.Testing.Tests/bin/Release/JustEat.Testing.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/src/JustEat.Testing.Tests/bin/Release/JustEat.Testing.Tests.dll" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
@@ -56,7 +56,7 @@
      <Module Name="justeat.testing.dll">
       <Namespaces>
        <Namespace Name="JustEat.Testing">
-        <Types>        
+        <Types>
         </Types>
        </Namespace>
       </Namespaces>
