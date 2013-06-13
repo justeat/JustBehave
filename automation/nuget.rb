@@ -41,11 +41,14 @@ def setup_nuget opts={}
 			nuspec.description = "JustEat.Testing is our BDD helper for C# unit-tests"
 			nuspec.summary = "JustEat.Testing is our BDD helper for C# unit-tests"
 			nuspec.language = "en-GB"
-			nuspec.licenseUrl = "https://github.je-labs.com/PRS/#{name}/blob/master/LICENSE"
+			nuspec.licenseUrl = "https://github.je-labs.com/PRS/#{name}/blob/master/LICENSE.md"
 			nuspec.projectUrl = "https://github.je-labs.com/PRS/#{name}"
 			nuspec.working_directory = package_dir
 			nuspec.output_file = "#{name}.nuspec"
 			nuspec.tags = "bdd tests testing helper general library"
+      nuspec.dependency "AutoFixture", "3.2.1"
+      nuspec.dependency "NLog", "2.0.1.2"
+      nuspec.dependency "NUnit", "2.6.2"
 		end
 
 		nupkg = "out/#{name}.#{version}.nupkg"
