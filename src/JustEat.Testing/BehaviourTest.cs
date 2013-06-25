@@ -12,7 +12,7 @@ namespace JustEat.Testing
         [TestFixtureSetUp]
         public void Go()
         {
-            Setup();
+            Execute();
         }
 
         [TestFixtureTearDown]

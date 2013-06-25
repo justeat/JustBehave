@@ -10,7 +10,7 @@ namespace JustEat.Testing
     {
         protected XBehaviourTest()
         {
-            Setup();
+            Execute();
         }
 
         public void Dispose()

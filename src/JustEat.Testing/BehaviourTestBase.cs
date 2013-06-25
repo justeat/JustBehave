@@ -50,8 +50,7 @@ namespace JustEat.Testing
             ExceptionMode = ExceptionMode.Record;
         }
 
-        [DebuggerNonUserCode]
-        protected void Setup()
+        protected void Execute()
         {
             Given();
 
@@ -77,6 +76,6 @@ namespace JustEat.Testing
             }
         }
 
-        public virtual void PostAssertTeardown() {}
+        protected virtual void PostAssertTeardown() {}
     }
 }
