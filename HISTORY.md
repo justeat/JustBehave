@@ -1,3 +1,6 @@
+#6.0.1
+* Dependencies upgraded
+
 #6.0.0
 * Introduced XUnit-based `XBehaviourTest<TSut>`, pushing most functionality down into base class `BehaviourTestBase<TSut>`.
 * Removed hand-rolled auto-mocking in favour of [AutoFixture](https://github.com/AutoFixture/AutoFixture).
