@@ -12,9 +12,15 @@ namespace JustEat.Testing
             MemoryTarget(target).Logs.ShouldContain(message);
         }
 
-        public static void ShouldHaveLogged(this TargetWithLayout target, Expression<Func<string, bool>> predicate)
+        public static void ShouldHaveLogged(this TargetWithLayout target, Func<string, bool> predicate)
         {
-            MemoryTarget(target).Logs.ShouldContain(predicate);
+            var expression = FuncToExpression(predicate);
+            MemoryTarget(target).Logs.ShouldContain(expression);
+        }
+
+        private static Expression<Func<T, bool>> FuncToExpression<T>(Func<T, bool> f)
+        {
+            return x => f(x);
         }
 
         private static MemoryTarget MemoryTarget(TargetWithLayout target)
