@@ -1,6 +1,7 @@
 #6.1.0
 ##Add
 * Ability to assert against logging events
+* AutoFixture updated to 3.5.1
 
 #6.0.1
 * Dependencies upgraded

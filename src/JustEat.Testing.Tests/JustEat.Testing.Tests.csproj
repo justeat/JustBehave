@@ -40,13 +40,13 @@
     <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture, Version=3.4.1.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+    <Reference Include="Ploeh.AutoFixture, Version=3.5.1.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\AutoFixture.3.4.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <HintPath>..\..\packages\AutoFixture.3.5.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture.AutoRhinoMock, Version=3.4.1.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+    <Reference Include="Ploeh.AutoFixture.AutoRhinoMock, Version=3.5.1.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\AutoFixture.AutoRhinoMocks.3.4.1\lib\net40\Ploeh.AutoFixture.AutoRhinoMock.dll</HintPath>
+      <HintPath>..\..\packages\AutoFixture.AutoRhinoMocks.3.5.1\lib\net40\Ploeh.AutoFixture.AutoRhinoMock.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
