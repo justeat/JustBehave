@@ -43,6 +43,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\AutoFixture.3.4.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
     </Reference>
+    <Reference Include="Shouldly, Version=1.1.1.1, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JustEat.Testing.Tests\bin\Release\Shouldly.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +54,7 @@
     <Compile Include="BehaviourTestBase.cs" />
     <Compile Include="ExceptionMode.cs" />
     <Compile Include="GlobalSuppression.cs" />
+    <Compile Include="LogExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThenAttribute.cs" />
     <Compile Include="XBehaviourTest.cs" />

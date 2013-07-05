@@ -1,3 +1,7 @@
+#6.1.0
+##Add
+* Ability to assert against logging events
+
 #6.0.1
 * Dependencies upgraded
 
