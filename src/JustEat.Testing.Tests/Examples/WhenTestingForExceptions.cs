@@ -12,7 +12,7 @@ namespace JustEat.Testing.Tests.Examples
 
         protected override void When()
         {
-            SystemUnderTest.TakeADump();
+            BadlyBehaved.TakeADump();
         }
 
         [Then]
@@ -24,7 +24,7 @@ namespace JustEat.Testing.Tests.Examples
 
     public class BadlyBehaved
     {
-        public void TakeADump()
+        public static void TakeADump()
         {
             throw new InvalidOperationException();
         }

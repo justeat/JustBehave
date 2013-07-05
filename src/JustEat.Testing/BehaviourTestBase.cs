@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using NLog;
 using NLog.Config;
+using NLog.Layouts;
 using NLog.Targets;
 using Ploeh.AutoFixture;
 
@@ -10,45 +10,44 @@ namespace JustEat.Testing
 {
     public abstract class BehaviourTestBase<TSystemUnderTest>
     {
-        protected Fixture Fixture { get; private set; }
-        protected ExceptionMode ExceptionMode { get; private set; }
-        protected TSystemUnderTest SystemUnderTest { get; private set; }
-        protected Logger Log { get; private set; }
-        protected Exception ThrownException { get; private set; }
-        
+        // ReSharper disable DoNotCallOverridableMethodsInConstructor
         protected BehaviourTestBase()
         {
             ExceptionMode = ExceptionMode.Throw;
-#if DEBUG
-            var level = LogLevel.Trace;
-#else
-			var level = LogLevel.Warn;
-#endif
-            SimpleConfigurator.ConfigureForTargetLogging(new ColoredConsoleTarget {Layout = "${message}"}, level);
+            LoggingTarget = ConfigureLoggingTarget();
+            LogLevel = ConfigureLogLevel();
+            SimpleConfigurator.ConfigureForTargetLogging(LoggingTarget, LogLevel);
             Log = LogManager.GetCurrentClassLogger();
 
             Fixture = new Fixture();
             CustomizeAutoFixture(Fixture);
         }
+        // ReSharper restore DoNotCallOverridableMethodsInConstructor
 
-        protected virtual void CustomizeAutoFixture(Fixture fixture) {}
-        
-        protected abstract void Given();
+        protected Fixture Fixture { get; private set; }
+        protected Logger Log { get; private set; }
+        protected TargetWithLayout LoggingTarget { get; private set; }
+        protected TSystemUnderTest SystemUnderTest { get; private set; }
+        protected Exception ThrownException { get; private set; }
+        private ExceptionMode ExceptionMode { get; set; }
+        private LogLevel LogLevel { get; set; }
 
-        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Justification = "When really is the best name for this message")]
-        protected abstract void When();
+        protected virtual LogLevel ConfigureLogLevel()
+        {
+            return LogLevel.Warn;
+        }
 
-        protected virtual void Teardown() {}
+        protected virtual TargetWithLayout ConfigureLoggingTarget()
+        {
+            return new ColoredConsoleTarget {Layout = LogLayout()};
+        }
 
         protected virtual TSystemUnderTest CreateSystemUnderTest()
         {
             return Fixture.Create<TSystemUnderTest>();
         }
 
-        protected void RecordAnyExceptionsThrown()
-        {
-            ExceptionMode = ExceptionMode.Record;
-        }
+        protected virtual void CustomizeAutoFixture(Fixture fixture) {}
 
         protected void Execute()
         {
@@ -76,6 +75,23 @@ namespace JustEat.Testing
             }
         }
 
+        protected abstract void Given();
+
+        protected virtual Layout LogLayout()
+        {
+            return "${message}";
+        }
+
         protected virtual void PostAssertTeardown() {}
+
+        protected void RecordAnyExceptionsThrown()
+        {
+            ExceptionMode = ExceptionMode.Record;
+        }
+
+        protected virtual void Teardown() {}
+
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Justification = "When really is the best name for this message")]
+        protected abstract void When();
     }
 }
