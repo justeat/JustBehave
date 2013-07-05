@@ -2,6 +2,7 @@
 using NLog;
 using NLog.Layouts;
 using NLog.Targets;
+using Shouldly;
 using Xunit;
 
 namespace JustEat.Testing.Tests.Examples
@@ -13,7 +14,7 @@ namespace JustEat.Testing.Tests.Examples
         [Fact]
         public void ShouldBeAbleToAssertLogHappened()
         {
-            ((MemoryTarget) LoggingTarget).Logs.Single(x => x.Equals(_message));
+            ((MemoryTarget) LoggingTarget).Logs.SingleOrDefault(x => x.Equals(_message)).ShouldNotBe(null);
         }
 
         [Fact]

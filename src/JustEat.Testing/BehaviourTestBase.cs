@@ -18,6 +18,7 @@ namespace JustEat.Testing
         protected LogLevel LogLevel { get; private set; }
         protected TargetWithLayout LoggingTarget { get; private set; }
 
+        // ReSharper disable DoNotCallOverridableMethodsInConstructor
         protected BehaviourTestBase()
         {
             ExceptionMode = ExceptionMode.Throw;
@@ -29,6 +30,7 @@ namespace JustEat.Testing
             Fixture = new Fixture();
             CustomizeAutoFixture(Fixture);
         }
+        // ReSharper restore DoNotCallOverridableMethodsInConstructor
 
         protected virtual TargetWithLayout ConfigureLoggingTarget()
         {
