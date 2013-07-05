@@ -45,7 +45,7 @@
     </Reference>
     <Reference Include="Shouldly, Version=1.1.1.1, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JustEat.Testing.Tests\bin\Release\Shouldly.dll</HintPath>
+      <HintPath>..\..\packages\Shouldly.1.1.1.1\lib\35\Shouldly.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
