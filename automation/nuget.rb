@@ -10,7 +10,7 @@ def setup_nuget opts={}
 		desc "restore packages"
 		task :restore => ['packages'] do
 			FileList.new("**/packages.config").map{|pc|Pathname.new(pc)}.each do |pc|
-				restore = CommandLine.new(nuget, "install \"#{pc.to_s.gsub('/', '\\')}\" -source http://ci.dev/guestAuth/app/nuget/v1/FeedService.svc/ -source http://nuget.org/api/v2/ -o packages", logger: @log)
+				restore = CommandLine.new(nuget, "install \"#{pc.to_s.gsub('/', '\\')}\" -source http://ci.je-labs.com/guestAuth/app/nuget/v1/FeedService.svc/ -source http://nuget.org/api/v2/ -o packages", logger: @log)
 				restore.run
 			end
 		end
