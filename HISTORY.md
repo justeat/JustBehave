@@ -1,3 +1,7 @@
+#6.2.0
+##Add
+* AutoFixture upgraded to 3.6.6
+
 #6.1.0
 ##Add
 * Ability to assert against logging events

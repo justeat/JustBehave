@@ -46,7 +46,7 @@ def setup_nuget opts={}
 			nuspec.working_directory = package_dir
 			nuspec.output_file = "#{name}.nuspec"
 			nuspec.tags = "bdd tests testing helper general library"
-      nuspec.dependency "AutoFixture", "3.5.1"
+      nuspec.dependency "AutoFixture", "3.6.6"
       nuspec.dependency "NLog", "2.0.1.2"
       nuspec.dependency "NUnit", "2.6.2"
 		end
