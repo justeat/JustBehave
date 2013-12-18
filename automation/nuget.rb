@@ -10,7 +10,7 @@ def setup_nuget opts={}
 		desc "restore packages"
 		task :restore => ['packages'] do
 			FileList.new("**/packages.config").map{|pc|Pathname.new(pc)}.each do |pc|
-				restore = CommandLine.new(nuget, "install \"#{pc.to_s.gsub('/', '\\')}\" -source http://ci.je-labs.com/guestAuth/app/nuget/v1/FeedService.svc/ -source http://nuget.org/api/v2/ -o packages", logger: @log)
+				restore = CommandLine.new(nuget, "install \"#{pc.to_s.gsub('/', '\\')}\" -source http://packages.je-labs.com/nuget/Default/ -source http://nuget.org/api/v2/ -o packages", logger: @log)
 				restore.run
 			end
 		end
@@ -47,7 +47,7 @@ def setup_nuget opts={}
 			nuspec.output_file = "#{name}.nuspec"
 			nuspec.tags = "bdd tests testing helper general library"
       nuspec.dependency "AutoFixture", "3.6.6"
-      nuspec.dependency "NLog", "2.0.1.2"
+      nuspec.dependency "NLog", "2.1.0"
       nuspec.dependency "NUnit", "2.6.2"
 		end
 
