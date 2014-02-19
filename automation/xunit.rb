@@ -9,7 +9,7 @@ def setup_xunit(params={})
   namespace :test do
     desc 'Run all xunit-tests'
     xunit do |xunit|
-      runners_glob = "#{third_party_path}/xunit/xunit.console.clr4.x86.exe"
+      runners_glob = "packages/xunit.runners*/tools/xunit.console.clr4.x86.exe"
       candidate_runners = FileList.new(runners_glob)
       raise "No runner found via 'runners_glob'" if candidate_runners.empty?
       xunit.command = candidate_runners.first
