@@ -13,7 +13,7 @@ class XUnit
     cmd_opts = { logger: logger }
 
     namespace :test do
-      file 'packages/xunit-runners' => out do |f|
+      file 'packages/xunit-runners' => ['nuget:restore'] do |f|
         runners_glob = "packages/xunit.runners*/tools/"
         puts "rg: #{Dir.glob(runners_glob)}"
         candidates = FileList.new(runners_glob)
@@ -21,7 +21,7 @@ class XUnit
         link = f.name.gsub('/','\\')
         real = candidates.first
         linker = CommandLine.new('cmd', "/c mklink /d \"#{link}\" \"#{File.expand_path(real).gsub('/','\\')}\"", cmd_opts)
-        logger.debug linker.run
+        logger.debug linker.run unless File.exist? 'packages/xunit-runners'
       end
 
       desc 'Run all xunit-tests'
@@ -44,6 +44,7 @@ class XUnit
       Rake.application.in_namespace(:test){|x| x.tasks.each{|t| t.invoke}}
     end
     task :directories => reports
+
 
     task :bootstrap => ['packages/xunit-runners']
   end
