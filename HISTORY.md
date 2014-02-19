@@ -1,3 +1,9 @@
+#6.4.0
+##Add
+* standard PRS automation sync'd to latest
+* xunit now gets nuget'd in and used rather than vendor'd
+* update AutoFixture, FakeItEasy dependencies
+
 #6.2.0
 ##Add
 * AutoFixture upgraded to 3.6.6
