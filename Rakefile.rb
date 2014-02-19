@@ -71,5 +71,6 @@ CLOBBER.exclude /packages\/repositories\.config/i
 
 task :build => [:bootstrap, :compile]
 task :quality => [:test, :analyse]
-task :package => [:build, :nuget]
+task :package => [:compile]
+task :package => [:nuget]
 task :default => [:package]

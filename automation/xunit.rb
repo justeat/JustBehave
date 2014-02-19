@@ -1,6 +1,8 @@
 class XUnit
   include TeamCity
   include Rake::DSL
+  include Cocaine
+  include WithLogging
 
   def setup_xunit(params={})
     configuration = params[:configuration] || 'Release'
@@ -8,14 +10,23 @@ class XUnit
     out = params[:out] || 'out'
     reports = "#{out}/unit-tests"
     glob = params[:glob] || "src/*/bin/#{configuration}/*.Tests.dll"
+    cmd_opts = { logger: logger }
 
     namespace :test do
+      file 'packages/xunit-runners' => out do |f|
+        runners_glob = "packages/xunit.runners*/tools/"
+        puts "rg: #{Dir.glob(runners_glob)}"
+        candidates = FileList.new(runners_glob)
+        fail "No runner found in #{runners_glob}" if candidates.empty?
+        link = f.name.gsub('/','\\')
+        real = candidates.first
+        linker = CommandLine.new('cmd', "/c mklink /d \"#{link}\" \"#{File.expand_path(real).gsub('/','\\')}\"", cmd_opts)
+        logger.debug linker.run
+      end
+
       desc 'Run all xunit-tests'
       xunit do |xunit|
-        runners_glob = "packages/xunit.runners*/tools/xunit.console.clr4.x86.exe"
-        candidate_runners = FileList.new(runners_glob)
-        raise "No runner found via 'runners_glob'" if candidate_runners.empty?
-        xunit.command = candidate_runners.first
+        xunit.command = "packages/xunit-runners/xunit.console.clr4.exe"
         xunit.assemblies = FileList.new glob
         xunit.html_output = reports
         xunit.options = ["/nunit #{reports.gsub('/','\\')}/unit-tests.nunit.xml"]
@@ -24,7 +35,7 @@ class XUnit
       end
 
       directory reports
-      task 'test:xunit' => reports
+      task 'test:xunit' => [reports]
       CLEAN.include 'out/TestResults.xml'
     end
 
@@ -33,5 +44,7 @@ class XUnit
       Rake.application.in_namespace(:test){|x| x.tasks.each{|t| t.invoke}}
     end
     task :directories => reports
+
+    task :bootstrap => ['packages/xunit-runners']
   end
 end
