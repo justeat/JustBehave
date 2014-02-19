@@ -41,6 +41,7 @@ end
 
 CLEAN.include 'out', '**/obj'
 CLEAN.exclude /packages\.config/i
+CLEAN.include '**/app.config'
 CLOBBER.include 'packages/*'
 CLOBBER.exclude /packages\/repositories\.config/i
 
