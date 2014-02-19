@@ -26,7 +26,7 @@ directory out_dir
 
 task :directories => 'out'
 XUnit.new.setup_xunit configuration: configuration, depend_on: [:compile]
-contract = NugetPackage.new(name, version, "src/JE.Api.Payments.Contracts", ["bin/#{configuration}/JE.Api.Payments.Contracts.{dll,pdb,xml}"], skip_dependencies: true)
+contract = NugetPackage.new(name, version, "src/#{name}", ["bin/#{configuration}/#{name}.{dll,pdb,xml}"], skip_dependencies: true, excludes: [/(Shouldly|Rhino|nunit|Castle|NLog|^ServiceStack)/i])
 contract.define do |nuspec|
   nuspec.id = name
   nuspec.version = version
@@ -47,7 +47,6 @@ contract.define do |nuspec|
   contract_dependencies.uniq.each do |d|
     nuspec.dependency d[:name], d[:version]
   end
-
 end
 
 NugetRestore.new.define
