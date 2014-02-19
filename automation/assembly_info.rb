@@ -51,7 +51,7 @@ def assembly_description
    branch: read_branch,
    revision: read_revision,
    build: {
-    at: Time.now.utc.iso8601,
+    at: Time.now.utc.strftime('%Y-%m-%dT%H:%M:%S%z'),
     by: ENV['username'],
     on: `hostname`.chomp
   }
