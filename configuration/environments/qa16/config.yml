@@ -1,0 +1,4 @@
+:tenants:
+  :uk:
+    :settings:
+      :dummysetting: "Just To Excercise the config merge"

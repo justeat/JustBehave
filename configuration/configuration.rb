@@ -1,0 +1,8 @@
+require 'yaml'
+require_relative '../logging/with_logging.rb'
+require_relative 'from_environment.rb'
+require_relative 'statsd_configuration.rb'
+require_relative 'instance_configuration.rb'
+require_relative 'connection_strings.rb'
+require_relative 'api_knowledge.rb'
+require_relative 'environment.rb'
