@@ -17,14 +17,14 @@ def setup_logging(level)
 	ColorOutputter.new 'color', {
 		:formatter => formatter,
 		:colors => {
-			:debug => :white,
-			:info => :gr,
-			:warn => :yellow,
-			:error => :red,
+			:debug => :white, 
+			:info => :gr, 
+			:warn => :yellow, 
+			:error => :red, 
 			:fatal => {
 				:color => :red, :background => :white
-			}
-		}
+			} 
+		} 
 	}
 	Log4r::Logger.new('color_logger', translate_to_log4r(level)).add('color')
 	Log4r::Logger['color_logger']
