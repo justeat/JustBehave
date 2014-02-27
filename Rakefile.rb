@@ -5,7 +5,6 @@ require 'pathname'
 require './automation/automation.rb'
 require './configuration/configuration.rb'
 require './configuration/configuration_generator.rb'
-require './configuration/paymentsapi_environment.rb'
 include Cocaine
 
 name = ENV['component'] || 'JustEat.Testing'
@@ -61,12 +60,10 @@ EnvironmentConfiguration.new(name, jer, team).define
 data = Environment.new(environment, name)
 ConfigurationGenerator.new(data, verbosity: verbosity, depend_on: [:environment_config]).define
 MsBuild.new(name, configuration: configuration).define
+Gendarme.new(configuration: configuration, includes: ["src/*/bin/#{name}*.{exe,dll}", "src/*/bin/#{@configuration}/#{name}*.{exe,dll}"]).define
 
-CLEAN.include 'out', '**/obj'
-CLEAN.exclude /packages\.config/i
+
 CLEAN.include '**/app.config'
-CLOBBER.include 'packages/*'
-CLOBBER.exclude /packages\/repositories\.config/i
 
 task :build => [:bootstrap, :compile]
 task :quality => [:test, :analyse]

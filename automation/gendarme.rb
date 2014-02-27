@@ -1,6 +1,7 @@
 class Gendarme
   include Rake::DSL
   include Cocaine
+  include TeamCity
 
   def initialize(opts={})
     @out_dir = opts[:out_dir] || 'out'
@@ -18,7 +19,7 @@ class Gendarme
         directory report_dir
         gendarme_output = ''
         desc 'Run gendarme across build-output'
-        task :run => [report_dir, :bootstrap, :compile] do
+        task :run => [report_dir] do
           html = "#{report_dir}/gendarme.html".gsub('/','\\')
           list = FileList.new
           @includes.each {|g| list.include g}
@@ -27,6 +28,8 @@ class Gendarme
           runner = CommandLine.new(@exe, "--html #{html} --severity all --confidence all --v #{assemblies}", logger: Logger.new(STDOUT), expected_outcodes: [0,1,3])
           gendarme_output = runner.run
         end
+
+        task :run => [:bootstrap, :compile] unless is_build_agent?
 
         task :publish => :run do
           if gendarme_output
