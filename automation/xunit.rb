@@ -11,22 +11,19 @@ class XUnit
     reports = "#{out}/unit-tests"
     glob = params[:glob] || "src/*/bin/#{configuration}/*.Tests.dll"
     cmd_opts = { logger: logger }
+    link_dir = "#{ENV['JUSTEAT_ROOT']}/xunit-runners"
 
     namespace :test do
-      file 'packages/xunit-runners' => ['nuget:restore'] do |f|
-        runners_glob = "packages/xunit.runners*/tools/"
-        puts "rg: #{Dir.glob(runners_glob)}"
-        candidates = FileList.new(runners_glob)
-        fail "No runner found in #{runners_glob}" if candidates.empty?
+      file link_dir => ['nuget:restore'] do |f|
+        real = figure_out_xunit_runner_directory
         link = f.name.gsub('/','\\')
-        real = candidates.first
         linker = CommandLine.new('cmd', "/c mklink /d \"#{link}\" \"#{File.expand_path(real).gsub('/','\\')}\"", cmd_opts)
-        logger.debug linker.run unless File.exist? 'packages/xunit-runners'
+        logger.debug linker.run unless File.exist? link_dir
       end
 
       desc 'Run all xunit-tests'
       xunit do |xunit|
-        xunit.command = "packages/xunit-runners/xunit.console.clr4.exe"
+        xunit.command = "#{link_dir}/xunit.console.clr4.exe"
         xunit.assemblies = FileList.new glob
         xunit.html_output = reports
         xunit.options = ["/nunit #{reports.gsub('/','\\')}/unit-tests.nunit.xml"]
@@ -45,7 +42,21 @@ class XUnit
     end
     task :directories => reports
 
+    task :bootstrap => link_dir
 
-    task :bootstrap => ['packages/xunit-runners']
+    task :delete_symlink do
+      real = figure_out_xunit_runner_directory
+      del = CommandLine.new('cmd', "/c rmdir /q \"#{File.expand_path(link_dir).gsub('/','\\')}\"", cmd_opts)
+      logger.debug del.run if File.exist? link_dir
+    end
+
+    task :package => :delete_symlink
+  end
+
+  def figure_out_xunit_runner_directory
+    runners_glob = "packages/xunit.runners*/tools/"
+    candidates = FileList.new(runners_glob)
+    fail "No runner found in #{runners_glob}" if candidates.empty?
+    candidates.first
   end
 end
