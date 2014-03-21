@@ -1,6 +1,0 @@
-:tenants:
-  :uk:
-    :connections:
-      :JustEat:
-        :server: "sql01.just-eat.co.uk"
-        :failover_partner: "sql02.just-eat.co.uk"
