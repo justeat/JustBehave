@@ -2,8 +2,8 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("JustEat.Testing")]
-[assembly: AssemblyCompany("Just-Eat Holding Ltd")]
-[assembly: AssemblyCopyright("Copyright 2014, by Just-Eat Holding Ltd")]
+[assembly: AssemblyCompany("Just Eat")]
+[assembly: AssemblyCopyright("Copyright 2011-2014 Just Eat, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyVersion("0.1.0")]
 
