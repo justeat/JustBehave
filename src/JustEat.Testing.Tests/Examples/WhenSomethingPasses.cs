@@ -17,13 +17,13 @@ namespace JustEat.Testing.Tests.Examples
             _result = SystemUnderTest.ToString();
         }
 
-        [Fact]
+        [Then]
         public void ShouldHaveString()
         {
             _result.ShouldNotBe(null);
         }
 
-        [Fact]
+        [Then]
         public void ShouldHaveChangedFromInitial()
         {
             _result.ShouldNotBe("food");

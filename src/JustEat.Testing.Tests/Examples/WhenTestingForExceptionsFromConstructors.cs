@@ -6,7 +6,7 @@ namespace JustEat.Testing.Tests.Examples
 {
     public class WhenTestingForExceptionsFromConstructors : XBehaviourTest<BadlyBehavedConstructor>
     {
-        [Fact]
+        [Then]
         public void ShouldSeeException()
         {
             ThrownException.ShouldBeTypeOf<NotSupportedException>();

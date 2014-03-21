@@ -30,19 +30,19 @@ namespace JustEat.Testing.Tests.Examples
             fixture.Customize(new AutoRhinoMockCustomization());
         }
 
-        [Fact]
+        [Then]
         public void ShouldReadFood()
         {
             _result.ShouldBe("food");
         }
 
-        [Fact]
+        [Then]
         public void ShouldSupplyDependency()
         {
             SystemUnderTest.SomethingElse.ShouldNotBe(null);
         }
 
-        [Fact]
+        [Then]
         public void ShouldBeAbleToReturnSameInstanceOfDependency()
         {
             var expected = Fixture.Create<ISomethingElse>().ToString();
@@ -50,7 +50,7 @@ namespace JustEat.Testing.Tests.Examples
             actual.ShouldBe(expected);
         }
 
-        [Fact]
+        [Then]
         public void ShouldBeAbleToRunExpectationAndVerify()
         {
             _speech.ShouldBe("hi");

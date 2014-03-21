@@ -11,19 +11,19 @@ namespace JustEat.Testing.Tests.Examples
     {
         private string _message;
 
-        [Fact]
+        [Then]
         public void ShouldBeAbleToAssertLogHappened()
         {
             ((MemoryTarget) LoggingTarget).Logs.SingleOrDefault(x => x.Equals(_message)).ShouldNotBe(null);
         }
 
-        [Fact]
+        [Then]
         public void ShouldBeAbleToUsePredicateExtensionMethod()
         {
             LoggingTarget.ShouldHaveLogged(x => x == _message);
         }
 
-        [Fact]
+        [Then]
         public void ShouldBeAbleToUseStringExtensionMethod()
         {
             LoggingTarget.ShouldHaveLogged(_message);
