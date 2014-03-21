@@ -1,0 +1,9 @@
+2014-02-28 David Kelley <david.kelley@just-eat.com>
+
+  * Bump to version 1.2.3
+  * Fixed some bug that Jaimal introduced because he is a big noob.
+
+  Added support for foobar because we really need it.
+
+  Fixes #333
+  Fixes #212

@@ -1,0 +1,10 @@
+This file contains a list of people who have made large or regular contributions
+to your_project_name. Give them a special thanks and buy them a beer
+next time you meet them!                        
+
+Jaimal Chohan (@JCisdabomb) <jaimal.chohan@just-eat.com>
+David Kelley (@Rubylover) <david.kelley@just-eat.com>
+
+With special thanks to:
+
+Jane Doe (@janeypoo) <jane_is_super_cool_2k6@gmail.com>
