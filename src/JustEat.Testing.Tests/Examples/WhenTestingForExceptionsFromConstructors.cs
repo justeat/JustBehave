@@ -1,17 +1,10 @@
 ﻿using System;
 using Shouldly;
-using Xunit;
 
 namespace JustEat.Testing.Tests.Examples
 {
     public class WhenTestingForExceptionsFromConstructors : XBehaviourTest<BadlyBehavedConstructor>
     {
-        [Then]
-        public void ShouldSeeException()
-        {
-            ThrownException.ShouldBeTypeOf<NotSupportedException>();
-        }
-
         protected override BadlyBehavedConstructor CreateSystemUnderTest()
         {
             return new BadlyBehavedConstructor();
@@ -22,7 +15,13 @@ namespace JustEat.Testing.Tests.Examples
             RecordAnyExceptionsThrown();
         }
 
-        protected override void When() {}
+        protected override void When() { }
+
+        [Then]
+        public void ShouldSeeException()
+        {
+            ThrownException.ShouldBeTypeOf<NotSupportedException>();
+        }
     }
 
     public class BadlyBehavedConstructor

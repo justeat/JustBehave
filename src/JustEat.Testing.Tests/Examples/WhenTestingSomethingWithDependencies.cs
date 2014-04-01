@@ -2,11 +2,10 @@
 using Ploeh.AutoFixture.AutoRhinoMock;
 using Rhino.Mocks;
 using Shouldly;
-using Xunit;
 
 namespace JustEat.Testing.Tests.Examples
 {
-    public class WhenTestingSomethingWithDependencies : XBehaviourTest<Something>
+    public class WhenTestingSomethingWithDependencies : XBehaviourTest<SomethingUnderTest>
     {
         private ISomethingElse _fake;
         private string _result;
@@ -21,7 +20,7 @@ namespace JustEat.Testing.Tests.Examples
 
         protected override void When()
         {
-            _result = Something.Food();
+            _result = SomethingUnderTest.Food();
             _speech = SystemUnderTest.SomethingElse.SayHello();
         }
 
@@ -58,11 +57,11 @@ namespace JustEat.Testing.Tests.Examples
         }
     }
 
-    public class Something
+    public class SomethingUnderTest
     {
         private readonly ISomethingElse _somethingElse;
 
-        public Something(ISomethingElse somethingElse)
+        public SomethingUnderTest(ISomethingElse somethingElse)
         {
             _somethingElse = somethingElse;
         }

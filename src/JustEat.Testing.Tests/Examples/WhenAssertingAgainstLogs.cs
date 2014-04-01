@@ -7,9 +7,19 @@ using Xunit;
 
 namespace JustEat.Testing.Tests.Examples
 {
-    public class WhenAssertingAgainstLogs : XBehaviourTest<LoggingThing>
+    public class WhenAssertingAgainstLogs : XBehaviourTest<LoggerUnderTest>
     {
         private string _message;
+
+        protected override void Given()
+        {
+            _message = "some message";
+        }
+
+        protected override void When()
+        {
+            SystemUnderTest.Log.Debug(_message);
+        }
 
         [Then]
         public void ShouldBeAbleToAssertLogHappened()
@@ -39,28 +49,18 @@ namespace JustEat.Testing.Tests.Examples
             return new MemoryTarget {Layout = LogLayout()};
         }
 
-        protected override LoggingThing CreateSystemUnderTest()
+        protected override LoggerUnderTest CreateSystemUnderTest()
         {
-            return new LoggingThing {Log = Log};
-        }
-
-        protected override void Given()
-        {
-            _message = "some message";
+            return new LoggerUnderTest {Log = Log};
         }
 
         protected override Layout LogLayout()
         {
             return "${message}";
         }
-
-        protected override void When()
-        {
-            SystemUnderTest.Log.Debug(_message);
-        }
     }
 
-    public class LoggingThing
+    public class LoggerUnderTest
     {
         public Logger Log { get; set; }
     }
