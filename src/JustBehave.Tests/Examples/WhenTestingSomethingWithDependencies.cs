@@ -3,7 +3,7 @@ using Ploeh.AutoFixture.AutoRhinoMock;
 using Rhino.Mocks;
 using Shouldly;
 
-namespace JustEat.Testing.Tests.Examples
+namespace JustBehave.Tests.Examples
 {
     public class WhenTestingSomethingWithDependencies : XBehaviourTest<SomethingUnderTest>
     {

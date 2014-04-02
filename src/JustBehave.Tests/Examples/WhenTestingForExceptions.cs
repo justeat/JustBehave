@@ -1,7 +1,7 @@
 ﻿using System;
 using Shouldly;
 
-namespace JustEat.Testing.Tests.Examples
+namespace JustBehave.Tests.Examples
 {
     public class WhenTestingForExceptions : BehaviourTest<BadlyBehaved>
     {

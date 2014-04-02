@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JustEat.Testing
+namespace JustBehave
 {
     /// <summary>
     ///     XUnit-based BehaviourTest.

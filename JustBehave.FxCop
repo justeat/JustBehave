@@ -22,8 +22,8 @@
   <TargetFrameworkVersion>4.0</TargetFrameworkVersion>
  </ProjectOptions>
  <Targets>
-  <Target Name="$(ProjectDir)/src/JustEat.Testing.Tests/bin/Release/JustEat.Testing.dll" Analyze="True" AnalyzeAllChildren="True" />
-  <Target Name="$(ProjectDir)/src/JustEat.Testing.Tests/bin/Release/JustEat.Testing.Tests.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/src/JustBehave.Tests/bin/Release/JustBehave.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/src/JustBehave.Tests/bin/Release/JustBehave.Tests.dll" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
@@ -51,11 +51,11 @@
  </Rules>
  <FxCopReport Version="10.0">
   <Targets>
-   <Target Name="$(ProjectDir)/out/AnyCPU/v4.0/Release/JustEat.Testing.dll">
+   <Target Name="$(ProjectDir)/out/AnyCPU/v4.0/Release/JustBehave.dll">
     <Modules>
-     <Module Name="justeat.testing.dll">
+     <Module Name="JustBehave.dll">
       <Namespaces>
-       <Namespace Name="JustEat.Testing">
+       <Namespace Name="JustBehave">
         <Types>
         </Types>
        </Namespace>
@@ -63,11 +63,11 @@
      </Module>
     </Modules>
    </Target>
-   <Target Name="$(ProjectDir)/out/AnyCPU/v4.0/Release/JustEat.Testing.Tests.dll">
+   <Target Name="$(ProjectDir)/out/AnyCPU/v4.0/Release/JustBehave.Tests.dll">
     <Modules>
-     <Module Name="justeat.testing.tests.dll">
+     <Module Name="JustBehave.tests.dll">
       <Namespaces>
-       <Namespace Name="JustEat.Testing.Tests">
+       <Namespace Name="JustBehave.Tests">
         <Types>
          <Type Name="WhenMocking">
           <Members>

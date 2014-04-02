@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using NLog.Targets;
 using Shouldly;
 
-namespace JustEat.Testing
+namespace JustBehave
 {
     public static class LogExt
     {

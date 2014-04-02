@@ -1,6 +1,6 @@
 <Configuration>
   <SnapshotDialog>
-    <InitialDirectory>c:\src\root.git\JustEat\components\JustEat.Testing</InitialDirectory>
+    <InitialDirectory>c:\src\root.git\JustEat\components\JustBehave</InitialDirectory>
   </SnapshotDialog>
   <CoverageFilters>
     <IncludeFilters>

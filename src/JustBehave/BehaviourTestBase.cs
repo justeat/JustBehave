@@ -6,7 +6,7 @@ using NLog.Layouts;
 using NLog.Targets;
 using Ploeh.AutoFixture;
 
-namespace JustEat.Testing
+namespace JustBehave
 {
     public abstract class BehaviourTestBase<TSystemUnderTest>
     {

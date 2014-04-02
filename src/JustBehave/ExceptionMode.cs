@@ -1,4 +1,4 @@
-﻿namespace JustEat.Testing
+﻿namespace JustBehave
 {
     public enum ExceptionMode
     {

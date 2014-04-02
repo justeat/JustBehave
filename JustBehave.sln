@@ -2,15 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEat.Testing", "src\JustEat.Testing\JustEat.Testing.csproj", "{226465BD-C58A-4723-AA6E-8C48ABBAD4C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustBehave", "src\JustBehave\JustBehave.csproj", "{226465BD-C58A-4723-AA6E-8C48ABBAD4C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEat.Testing.Tests", "src\JustEat.Testing.Tests\JustEat.Testing.Tests.csproj", "{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustBehave.Tests", "src\JustBehave.Tests\JustBehave.Tests.csproj", "{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{80A7639E-30B7-4C4A-86C1-320351D4500A}"
 	ProjectSection(SolutionItems) = preProject
 		CONTRIBUTING.md = CONTRIBUTING.md
 		HISTORY.md = HISTORY.md
-		JustEat.Testing.ndproj = JustEat.Testing.ndproj
+		JustBehave.ndproj = JustBehave.ndproj
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 	EndProjectSection
@@ -41,6 +41,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
-		Project = ".\JustEat.Testing.ndproj"
+		Project = ".\JustBehave.ndproj"
 	EndGlobalSection
 EndGlobal

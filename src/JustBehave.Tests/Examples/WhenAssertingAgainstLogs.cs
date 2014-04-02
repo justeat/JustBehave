@@ -5,7 +5,7 @@ using NLog.Targets;
 using Shouldly;
 using Xunit;
 
-namespace JustEat.Testing.Tests.Examples
+namespace JustBehave.Tests.Examples
 {
     public class WhenAssertingAgainstLogs : XBehaviourTest<LoggerUnderTest>
     {

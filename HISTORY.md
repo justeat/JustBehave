@@ -65,4 +65,4 @@
 * Some tests, which was a bit meta but what the hell.
 
 #1.0.0
-First release, moved from `root/JustEat/src/JustEat.Testing` -> components tree as standalone OpenWrap'd package
+First release, moved from `root/JustEat/src/JustBehave` -> components tree as standalone OpenWrap'd package

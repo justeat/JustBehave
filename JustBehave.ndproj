@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<NDepend AppName="JustEat.Testing" Platform="DotNet">
+<NDepend AppName="JustBehave" Platform="DotNet">
   <OutputDir KeepHistoric="True" KeepXmlFiles="True">C:\src\lib_testing.git\out\NDependOut</OutputDir>
   <Assemblies>
-    <Name>JustEat.Testing.Tests</Name>
-    <Name>JustEat.Testing</Name>
+    <Name>JustBehave.Tests</Name>
+    <Name>JustBehave</Name>
   </Assemblies>
   <FrameworkAssemblies>
     <Name>Castle.Windsor</Name>
@@ -2833,7 +2833,7 @@ WARN IF Count > 0 IN SELECT TYPES WHERE
   // class named Foo]]></Query>
         <Query Active="True" DisplayList="True" DisplayStat="True" DisplaySelectionView="False" IsCriticalRule="False"><![CDATA[// <Name>Check that all namespaces begins with CompanyName.ProductName</Name>
 WARN IF Count > 0 IN SELECT NAMESPACES WHERE 
-  !NameLike "^JustEat.Testing"
+  !NameLike "^JustBehave"
   AND !IsInFrameworkAssembly ]]></Query>
       </Group>
     </Group>

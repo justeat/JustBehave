@@ -1,6 +1,6 @@
 ﻿# Contributing to project_name
 
-♥ JustEat.Testing and want to get involved?
+♥ JustBehave and want to get involved?
 Great! There are plenty of ways you can help!
 
 If you find a bug, have a feature request or even want to contribute an enhancement or fix, please follow the below guidelines so that we can help you out and/or get your code merged quickly.

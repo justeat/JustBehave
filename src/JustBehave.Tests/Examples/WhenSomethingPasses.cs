@@ -1,6 +1,6 @@
 ﻿using Shouldly;
 
-namespace JustEat.Testing.Tests.Examples
+namespace JustBehave.Tests.Examples
 {
     public class WhenSomethingPasses : XBehaviourTest<HappyThing>
     {
