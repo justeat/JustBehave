@@ -1,19 +1,28 @@
 JustBehave
 ==========
+_A BDD-influenced C# testing library cooked up by JUST EAT_
 
-JustBehave is a small .net library giving you BDD syntax around your unit tests.
+---
 
-It is designed to be flexible, allowing you to use:
+* Introduction
+* Installation
+* Getting Started
+* Documentation
+* Contributing
+* Copyright
 
-* Your testing framework of choice (NUnit, xUnit etc)
-* Your mocking framework of choice (RhinoMocks, NSubstitute, Moq etc)
+JustBehave is a small .NET library that helps you structure your C# tests into BDD-style contexts and scenarios.
+It supports both **NUnit** and **XUnit** and depends on **AutoFixture** for automatic dependency construction using your mocking framework of choice.
+
+JustBehave was written to ensure that our internal tests followed a consistent and sane BDD pattern, without relying on frameworks like SpecFlow and the Gherkin language. Tests written using JustBehave are structured and organised, without requiring additional tooling or plugins.
+		
 
 ## Installation
 
 Pre-requisites: The project is built in .net v4.0.
 
-* From source: https://github.com/davidwhitney/System.Configuration.Abstractions
-* By hand: https://www.nuget.org/packages/System.Configuration.Abstractions
+* From source: https://github.com/justeat/JustBehave
+* By hand: https://www.nuget.org/packages/JustBehave
 
 Via NuGet:
 
@@ -22,17 +31,123 @@ Via NuGet:
 
 ## Getting Started
 
-Run through general usage examples. Provide worked examples of the most common tasks that people will perform with your project. 
+Once you have the package installed into your test project, along with your test framework of choice, a standard JustBehave test file will look like this using XUnit:
+```csharp
+	//public class TestClassNamedAfterABddContext : XBehaviourTest<TheClassThatIWantToTest> // XUnit
+	public class TestClassNamedAfterABddContext : BehaviourTest<TheClassThatIWantToTest> // NUnit
+	{
+		private string _input;
+		private string _result;
 
-For advanced examples and usages, refer them directly to the associated (GitHub) Wiki page.  Consider using [GitHub Pages](http://pages.github.com).
+		protected override void Given()
+		{
+			_input = "my input";
+		}
 
----
+		protected override void When()
+		{
+			_result = SystemUnderTest.CallingAMethod(_input);
+		}
 
-More in-depth documentation can be found in the [project wiki](https://github.je-labs.com/jaimal-chohan/public-je-template/wiki).
+		[Then]
+		public void ReturnsSomething()
+		{
+			_result.ShouldBe("something");
+		}
+	}
+```
+A full set of tested examples are provided in the repository in the project **JustBehave.Tests** in the **Examples** namespace.
+		
+## Documentation 
+
+* Important classes and attributes
+* Structuring Contexts and Scenarios
+* Handling and Testing Exceptions
+* Testing classes with dependencies
+
+### Important classes and attributes
+
+The core of JustBehave is built upon a few small classes:
+
+* `BehaviourTest` - inherited for an **NUnit** test
+* `XBehaviourTest` - inherited for an **XUnit** test
+* `ThenAttribute` - used to annotate your **Then** conditions for the testing framework
+
+This leads to test classes that follow the convention:
+```csharp
+	public class TestClassNamedAfterABddContext : BehaviourTest<TheClassThatIWantToTest>
+	{
+		protected override void Given(){ /*...*/ }
+		protected override void When(){ /*...*/ }
+		[Then] public void Assertion1(){ /*...*/ }			
+		[Then] public void Assertion2(){ /*...*/ }
+	}
+```
+The NUnit `TestFixtureAttribute` is optional and implemented on the base of our NUnit BehaviourTest classes.
+
+### Structuring Contexts and Scenarios
+
+The core of JustBehave is a base class for your tests that enforces a **"Given, When, Then"** pattern. Each test file represents a single context with a *Given*, a *When*, and multiple *Then* assertions. 
+
+Broader tests are constructed by **inheriting from previous test classes**, and overriding the *Given* or *When* steps, while adding additional *Then* conditions to construct scenarios. Expect to use namespaces to group related scenarios, while **giving your test classes names that represent their context**. 
+
+For example, when testing some payment infrastructure, expect to end up with a set of files like this:
+
+	/Tests/Payments/WhenIMakeAPayment.cs
+	/Tests/Payments/AndMyPaymentIsRejected.cs (inherits from WhenIMakeAPayment.cs)
+	/Tests/Payments/AndMyPaymentIsAccepted.cs (inherits from WhenIMakeAPayment.cs)
+		
+By following this style, you'll end up with a ReSharper test runner that looks like this:
+
+![test runner following bdd conventions](test-screenshot.png)
+		
+### Handling and Testing Exceptions
+
+If you want to assert on thrown exceptions, you setup your Given() step like this:
+```csharp
+	protected override void Given()
+	{
+	    RecordAnyExceptionsThrown();
+	}
+```		
+Any exceptions thrown will then be available in your Then steps for you to assert on:
+```csharp        
+	[Then]
+	public void ShouldSeeException()
+	{
+		ThrownException.ShouldBeTypeOf<NotSupportedException>();
+	}
+```	
+### Testing classes with dependencies
+
+In order for JustBehave to construct your dependency graphs, you must either:
+
+* Manually construct your system under test
+* Configure AutoFixture and a mocking framework to auto-mock your dependencies
+	
+To override construction of the system under test, you need to override `CreateSystemUnderTest()` and return a valid instance:
+
+```csharp
+	protected override SomethingUnderTest CreateSystemUnderTest()
+	{
+		return new SomethingUnderTest();
+	}
+```	
+
+Alternatively, to configure AutoFixture, you should override `CustomizeAutoFixture()` providing a valid `AutoFixture` customisation:
+
+```csharp
+	protected override void CustomizeAutoFixture(Fixture fixture)
+	{
+		fixture.Customize(new AutoRhinoMockCustomization());
+		// You can add more customisations by adding the NuGet packages for
+		// Ploeh.AutoFixture.Auto**PopularMockingFramework** and hooking them up
+	}
+```
 
 ## Contributing
 
-If you find a bug, have a feature request or even want to contribute an enhancement or fix, please follow the [contributing guidelines](https://github.je-labs.com/jaimal-chohan/public-je-template/blob/master/CONTRIBUTING.md).
+If you find a bug, have a feature request or even want to contribute an enhancement or fix, please follow the contributing guidelines included in the repository.
 
 
 ## Copyright
