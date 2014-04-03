@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+	<title>$id$</title>
+    <authors>JUST EAT</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/justeat/JustBehave</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>A BDD-influenced C# testing library cooked up by JUST EAT</summary>
+    <description>$description$</description>
+    <copyright>Copyright 2013</copyright>
+    <tags>BDD test unit behaviour driven no-gherkin contexts scenarios nunit xunit autofixture</tags>
+	<licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+  </metadata>
+</package>
