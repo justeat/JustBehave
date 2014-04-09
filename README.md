@@ -71,7 +71,8 @@ The core of JustBehave is built upon a few small classes:
 
 * `BehaviourTest` - inherited for an **NUnit** test
 * `XBehaviourTest` - inherited for an **XUnit** test
-* `ThenAttribute` - used to annotate your **Then** conditions for the testing framework
+* `ThenAttribute` - used to annotate your **Then** conditions for the nunit testing framework
+  * when using xunit, use `FactAttribute` as normal
 
 This leads to test classes that follow the convention:
 ```csharp
