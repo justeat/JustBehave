@@ -61,6 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BehaviourTestBaseTests\WhenExecuteIsInvokedByTestRunner.cs" />
+    <Compile Include="BehaviourTestBaseTests\FrameworkRecordingExceptions\ExceptionIsThrown.cs" />
+    <Compile Include="BehaviourTestBaseTests\FrameworkThrowingExceptions\ExceptionIsThrown.cs" />
+    <Compile Include="FakeTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Examples\WhenAssertingAgainstLogs.cs" />
     <Compile Include="Examples\WhenSomethingPasses.cs" />

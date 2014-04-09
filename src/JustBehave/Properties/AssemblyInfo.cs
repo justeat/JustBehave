@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("JustBehave")]
 [assembly: AssemblyCompany("Just Eat")]
@@ -9,3 +10,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("0.1.0")]
 
 [assembly: CLSCompliant(false)]
+[assembly: InternalsVisibleTo("JustBehave.Tests")]
