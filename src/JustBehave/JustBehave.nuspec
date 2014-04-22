@@ -3,15 +3,18 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-	<title>$id$</title>
+    <title>$id$</title>
     <authors>JUST EAT</authors>
     <owners>$author$</owners>
     <projectUrl>https://github.com/justeat/JustBehave</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	<summary>A BDD-influenced C# testing library cooked up by JUST EAT</summary>
+    <summary>A BDD-influenced C# testing library cooked up by JUST EAT</summary>
     <description>$description$</description>
     <copyright>Copyright 2013</copyright>
     <tags>BDD test unit behaviour driven no-gherkin contexts scenarios nunit xunit autofixture</tags>
-	<licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <dependencies>
+      <dependency id="AutoFixture" version="[3.16.5]" />
+    </dependencies>
   </metadata>
 </package>
