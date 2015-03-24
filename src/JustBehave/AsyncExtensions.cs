@@ -68,7 +68,9 @@ namespace JustBehave
             readonly Queue<Tuple<SendOrPostCallback, object>> _items = new Queue<Tuple<SendOrPostCallback, object>>();
             readonly AutoResetEvent _workItemsWaiting = new AutoResetEvent(false);
 
+// ReSharper disable MemberCanBePrivate.Local
             public Exception InnerException { get; set; }
+// ReSharper restore MemberCanBePrivate.Local
 
             public override void Send(SendOrPostCallback sendOrPostCallback, object state)
             {
