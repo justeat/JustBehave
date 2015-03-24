@@ -63,10 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsyncBehaviourTests\FakeAsyncTestCase.cs" />
     <Compile Include="AsyncBehaviourTests\WhenAnNUnitTestPasses.cs" />
     <Compile Include="AsyncBehaviourTests\WhenExecutingAsyncTaskSynchronously.cs" />
     <Compile Include="AsyncBehaviourTests\WhenAnXUnitTestPasses.cs" />
+    <Compile Include="AsyncBehaviourTests\WhenTestingForExceptions.cs" />
     <Compile Include="BehaviourTestBaseTests\WhenExecuteIsInvokedByTestRunner.cs" />
     <Compile Include="BehaviourTestBaseTests\FrameworkRecordingExceptions\ExceptionIsThrown.cs" />
     <Compile Include="BehaviourTestBaseTests\FrameworkThrowingExceptions\ExceptionIsThrown.cs" />
