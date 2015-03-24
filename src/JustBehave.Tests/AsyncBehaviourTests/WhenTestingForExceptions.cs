@@ -24,6 +24,7 @@ namespace JustBehave.Tests.AsyncBehaviourTests
         }
     }
 
+// ReSharper disable once ClassNeverInstantiated.Global
     public class BadlyBehaved
     {
         public static Task TakeADump()

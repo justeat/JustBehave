@@ -31,6 +31,7 @@ namespace JustBehave.Tests.AsyncBehaviourTests
         }
     }
 
+// ReSharper disable once ClassNeverInstantiated.Global
     public class XHappyThing
     {
         public Task<string> AlwaysHappy()

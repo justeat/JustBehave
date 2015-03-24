@@ -25,9 +25,11 @@ namespace JustBehave
         }
         // ReSharper restore DoNotCallOverridableMethodsInConstructor
 
+// ReSharper disable MemberCanBePrivate.Global
         protected Fixture Fixture { get; private set; }
         protected Logger Log { get; private set; }
         protected TargetWithLayout LoggingTarget { get; private set; }
+// ReSharper restore MemberCanBePrivate.Global
         protected TSystemUnderTest SystemUnderTest { get; private set; }
         protected Exception ThrownException { get; private set; }
         private ExceptionMode ExceptionMode { get; set; }

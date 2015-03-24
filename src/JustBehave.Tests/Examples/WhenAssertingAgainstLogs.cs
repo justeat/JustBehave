@@ -3,7 +3,6 @@ using NLog;
 using NLog.Layouts;
 using NLog.Targets;
 using Shouldly;
-using Xunit;
 
 namespace JustBehave.Tests.Examples
 {

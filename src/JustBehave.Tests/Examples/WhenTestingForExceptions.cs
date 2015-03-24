@@ -22,6 +22,7 @@ namespace JustBehave.Tests.Examples
         }
     }
 
+// ReSharper disable once ClassNeverInstantiated.Global
     public class BadlyBehaved
     {
         public static void TakeADump()
