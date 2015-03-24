@@ -6,11 +6,11 @@ namespace JustBehave
     ///     XUnit-based BehaviourTest.
     /// </summary>
     /// <typeparam name="TSystemUnderTest"></typeparam>
-    public abstract class XBehaviourTest<TSystemUnderTest> : BehaviourTestBase<TSystemUnderTest>, IDisposable
+    public abstract class XAsyncBehaviourTest<TSystemUnderTest> : AsyncBehaviourTestBase<TSystemUnderTest>, IDisposable
     {
-        protected XBehaviourTest()
+        protected XAsyncBehaviourTest()
         {
-            Execute();
+            AsyncExtensions.RunSynchronously(async() => await Execute());
         }
 
         public void Dispose()

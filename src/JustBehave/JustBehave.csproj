@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JustBehave</RootNamespace>
     <AssemblyName>JustBehave</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -26,11 +26,13 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <DefineConstants>$(CommonDefineConstants)DEBUG;</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <DefineConstants>$(CommonDefineConstants)</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog">
@@ -51,6 +53,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncBehaviourTest.cs" />
+    <Compile Include="AsyncBehaviourTestBase.cs" />
+    <Compile Include="AsyncExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BehaviourTest.cs" />
     <Compile Include="BehaviourTestBase.cs" />
@@ -58,6 +63,7 @@
     <Compile Include="GlobalSuppression.cs" />
     <Compile Include="LogExt.cs" />
     <Compile Include="ThenAttribute.cs" />
+    <Compile Include="XAsyncBehaviourTest.cs" />
     <Compile Include="XBehaviourTest.cs" />
   </ItemGroup>
   <ItemGroup>
