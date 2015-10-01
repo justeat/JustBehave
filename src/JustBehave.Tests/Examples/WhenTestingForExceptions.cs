@@ -18,7 +18,7 @@ namespace JustBehave.Tests.Examples
         [Then]
         public void ExceptionShouldBeOfExpectedType()
         {
-            ThrownException.ShouldBeTypeOf<InvalidOperationException>();
+            ThrownException.ShouldBeAssignableTo<InvalidOperationException>();
         }
     }
 
