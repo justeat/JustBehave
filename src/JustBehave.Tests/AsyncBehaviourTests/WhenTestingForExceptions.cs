@@ -20,7 +20,7 @@ namespace JustBehave.Tests.AsyncBehaviourTests
         [Then, Test]
         public void ExceptionShouldBeOfExpectedType()
         {
-            ThrownException.ShouldBeTypeOf<InvalidOperationException>();
+            ThrownException.ShouldBeAssignableTo<InvalidOperationException>();
         }
     }
 

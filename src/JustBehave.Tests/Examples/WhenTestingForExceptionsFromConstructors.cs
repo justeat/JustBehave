@@ -20,7 +20,7 @@ namespace JustBehave.Tests.Examples
         [Then]
         public void ShouldSeeException()
         {
-            ThrownException.ShouldBeTypeOf<NotSupportedException>();
+            ThrownException.ShouldBeAssignableTo<NotSupportedException>();
         }
     }
 
