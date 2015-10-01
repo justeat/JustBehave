@@ -14,7 +14,7 @@
     <tags>BDD test unit behaviour driven no-gherkin contexts scenarios nunit xunit autofixture</tags>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <dependencies>
-      <dependency id="AutoFixture" version="[3.16.5]" />
+      <dependency id="AutoFixture" version="3.16.5" />
     </dependencies>
   </metadata>
 </package>
