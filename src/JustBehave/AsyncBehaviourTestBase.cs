@@ -26,7 +26,7 @@ namespace JustBehave
         // ReSharper restore DoNotCallOverridableMethodsInConstructor
 
 // ReSharper disable MemberCanBePrivate.Global
-        protected Fixture Fixture { get; private set; }
+        protected IFixture Fixture { get; private set; }
         protected Logger Log { get; private set; }
         protected TargetWithLayout LoggingTarget { get; private set; }
 // ReSharper restore MemberCanBePrivate.Global
@@ -50,7 +50,7 @@ namespace JustBehave
             return Fixture.Create<TSystemUnderTest>();
         }
 
-        protected virtual void CustomizeAutoFixture(Fixture fixture) { }
+        protected virtual void CustomizeAutoFixture(IFixture fixture) { }
 
         protected async Task Execute()
         {

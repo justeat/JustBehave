@@ -24,7 +24,7 @@ namespace JustBehave.Tests.Examples
             _speech = SystemUnderTest.SomethingElse.SayHello();
         }
 
-        protected override void CustomizeAutoFixture(Fixture fixture)
+        protected override void CustomizeAutoFixture(IFixture fixture)
         {
             fixture.Customize(new AutoRhinoMockCustomization());
         }

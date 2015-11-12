@@ -24,7 +24,7 @@ namespace JustBehave
         }
         // ReSharper restore DoNotCallOverridableMethodsInConstructor
 
-        protected Fixture Fixture { get; private set; }
+        protected IFixture Fixture { get; private set; }
         protected Logger Log { get; private set; }
         protected TargetWithLayout LoggingTarget { get; private set; }
         protected TSystemUnderTest SystemUnderTest { get; private set; }
@@ -47,7 +47,7 @@ namespace JustBehave
             return Fixture.Create<TSystemUnderTest>();
         }
 
-        protected virtual void CustomizeAutoFixture(Fixture fixture) {}
+        protected virtual void CustomizeAutoFixture(IFixture fixture) {}
 
         protected void Execute()
         {
