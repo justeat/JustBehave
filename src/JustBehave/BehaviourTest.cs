@@ -9,13 +9,13 @@ namespace JustBehave
     [TestFixture]
     public abstract class BehaviourTest<TSystemUnderTest> : BehaviourTestBase<TSystemUnderTest>
     {
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void Go()
         {
             Execute();
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public new virtual void PostAssertTeardown() {}
     }
 }
