@@ -5,13 +5,13 @@ namespace JustBehave
     [TestFixture]
     public abstract class AsyncBehaviourTest<TSystemUnderTest> : AsyncBehaviourTestBase<TSystemUnderTest>
     {
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void Go()
         {
             AsyncExtensions.RunSynchronously(Execute);
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public new virtual void PostAssertTeardown() { }
     }
 }
