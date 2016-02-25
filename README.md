@@ -4,6 +4,8 @@ _A BDD-influenced C# testing library cooked up by JUST EAT_
 
 ---
 
+[Appveyor](https://img.shields.io/appveyor/ci/justeattech/justbehave.svg)
+
 * Introduction
 * Installation
 * Getting Started
