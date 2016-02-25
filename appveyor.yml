@@ -9,15 +9,11 @@ assembly_info:
 before_build:
 - nuget restore
 build:
-  project: src\JustBehave.sln
   parallel: true
   publish_nuget: true
   publish_nuget_symbols: true
   include_nuget_references: true
   verbosity: normal
-test:
-  assemblies: 
-    - '**\*.Tests.dll'
 artifacts:
 - path: 'JustBehave.{version}*.nupkg'
 notifications:
