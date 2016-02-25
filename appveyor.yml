@@ -14,7 +14,7 @@ build:
   publish_nuget_symbols: true
   include_nuget_references: true
   verbosity: normal
- test:
+test:
   assemblies:
     - '**\*.Tests.dll'
  artifacts:
