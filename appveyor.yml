@@ -14,7 +14,10 @@ build:
   publish_nuget_symbols: true
   include_nuget_references: true
   verbosity: normal
-artifacts:
+ test:
+  assemblies:
+    - '**\*.Tests.dll'
+ artifacts:
 - path: 'JustBehave.{version}*.nupkg'
 notifications:
 - provider: HipChat
