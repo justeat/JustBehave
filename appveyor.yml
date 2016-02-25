@@ -15,7 +15,8 @@ build:
   include_nuget_references: true
   verbosity: normal
 test:
-  assemblies: '**\*.Tests.dll'
+  assemblies: 
+    - '**\*.Tests.dll'
 artifacts:
 - path: 'JustBehave.{version}*.nupkg'
 notifications:
