@@ -17,8 +17,8 @@ build:
 test:
   assemblies:
     - '**\*.Tests.dll'
- artifacts:
-- path: 'JustBehave.{version}*.nupkg'
+artifacts:
+  - path: 'JustBehave.{version}*.nupkg'
 notifications:
 - provider: HipChat
   room: 'Eng :: Open Source'
