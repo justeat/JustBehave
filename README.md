@@ -1,5 +1,7 @@
 JustBehave
 ==========
+
+[![Join the chat at https://gitter.im/justeat/JustBehave](https://badges.gitter.im/justeat/JustBehave.svg)](https://gitter.im/justeat/JustBehave?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 _A BDD-influenced C# testing library cooked up by JUST EAT_
 
 ---
