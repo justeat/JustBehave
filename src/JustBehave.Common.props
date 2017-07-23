@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Authors>Just Eat</Authors>
+    <Company>Just Eat</Company>
+    <Copyright>Copyright 2011-$([System.DateTime]::Now.ToString(yyyy)) Just Eat, Inc. or its affiliates. All Rights Reserved.</Copyright>
+    <Description>A BDD-influenced C# testing library cooked up by JUST EAT</Description>
+    <Version>$(APPVEYOR_BUILD_VERSION)</Version>
+    <Version Condition=" '$(Version)' == '' ">0.1.0</Version>
+  </PropertyGroup>
+</Project>
