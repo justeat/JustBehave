@@ -1,25 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustBehave", "JustBehave\JustBehave.csproj", "{226465BD-C58A-4723-AA6E-8C48ABBAD4C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave", "JustBehave\JustBehave.csproj", "{226465BD-C58A-4723-AA6E-8C48ABBAD4C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustBehave.Tests", "JustBehave.Tests\JustBehave.Tests.csproj", "{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{80A7639E-30B7-4C4A-86C1-320351D4500A}"
-	ProjectSection(SolutionItems) = preProject
-		CONTRIBUTING.md = CONTRIBUTING.md
-		JustBehave.ndproj = JustBehave.ndproj
-		LICENSE.md = LICENSE.md
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A2BB5172-3513-46F2-ACD5-7565DA15F368}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave.Tests", "JustBehave.Tests\JustBehave.Tests.csproj", "{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +23,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B592ABE0-8408-4E77-A937-FE0B6DCC611F}
 	EndGlobalSection
 	GlobalSection(NDepend) = preSolution
 		Project = ".\JustBehave.ndproj"
