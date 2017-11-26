@@ -4,7 +4,24 @@
     <Company>Just Eat</Company>
     <Copyright>Copyright 2011-$([System.DateTime]::Now.ToString(yyyy)) Just Eat, Inc. or its affiliates. All Rights Reserved.</Copyright>
     <Description>A BDD-influenced C# testing library cooked up by Just Eat</Description>
-    <Version>$(APPVEYOR_BUILD_VERSION)</Version>
-    <Version Condition=" '$(Version)' == '' ">1.0.0</Version>
+
+    <Major>2</Major>
+    <Minor>0</Minor>
+    <Revision>0</Revision>
+
+    <BuildNumber Condition=" '$(APPVEYOR_BUILD_NUMBER)' != '' ">$(APPVEYOR_BUILD_NUMBER)</BuildNumber>
+    <BuildNumber Condition=" '$(BUILD_NUMBER)' != '' ">$(BUILD_NUMBER)</BuildNumber>
+    <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
+
+    <!-- Remove for release -->
+    <PrereleaseLabel>-beta</PrereleaseLabel>
+
+    <BuildSuffix Condition=" '$(PrereleaseLabel)' != '' ">$(PrereleaseLabel)-$(BuildNumber)</BuildSuffix>
+    <BuildSuffix Condition=" '$(BuildSuffix)' == '' "></BuildSuffix>
+
+    <AssemblyVersion>$(Major).0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>$(Major).$(Minor).$(Revision).$(BuildNumber)</AssemblyFileVersion>
+    <InformationalVersion>$(Major).$(Minor).$(Revision)$(BuildSuffix)</InformationalVersion>
+    <PackageVersion>$(Major).$(Minor).$(Revision)$(BuildSuffix)</PackageVersion>
   </PropertyGroup>
 </Project>
