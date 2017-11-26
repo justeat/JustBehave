@@ -1,6 +1,6 @@
-﻿using Ploeh.AutoFixture;
-using Ploeh.AutoFixture.AutoRhinoMock;
-using Rhino.Mocks;
+using AutoFixture;
+using AutoFixture.AutoNSubstitute;
+using NSubstitute;
 using Shouldly;
 
 namespace JustBehave.Tests.Examples
@@ -15,7 +15,7 @@ namespace JustBehave.Tests.Examples
         {
             _result = "bar";
             _fake = Fixture.Freeze<ISomethingElse>();
-            _fake.Expect(x => x.SayHello()).Return("hi");
+            _fake.SayHello().Returns("hi");
         }
 
         protected override void When()
@@ -26,7 +26,7 @@ namespace JustBehave.Tests.Examples
 
         protected override void CustomizeAutoFixture(IFixture fixture)
         {
-            fixture.Customize(new AutoRhinoMockCustomization());
+            fixture.Customize(new AutoConfiguredNSubstituteCustomization());
         }
 
         [Then]
@@ -53,7 +53,6 @@ namespace JustBehave.Tests.Examples
         public void ShouldBeAbleToRunExpectationAndVerify()
         {
             _speech.ShouldBe("hi");
-            _fake.VerifyAllExpectations();
         }
     }
 

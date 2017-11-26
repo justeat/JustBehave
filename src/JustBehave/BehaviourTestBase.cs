@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
+using AutoFixture;
 using NLog;
 using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
-using Ploeh.AutoFixture;
 
 namespace JustBehave
 {
