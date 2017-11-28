@@ -1,5 +1,7 @@
-﻿using System;
+using System;
+using JustBehave.xUnit;
 using Shouldly;
+using Xunit;
 
 namespace JustBehave.Tests.Examples
 {
@@ -17,7 +19,7 @@ namespace JustBehave.Tests.Examples
 
         protected override void When() { }
 
-        [Then]
+        [Fact]
         public void ShouldSeeException()
         {
             ThrownException.ShouldBeAssignableTo<NotSupportedException>();

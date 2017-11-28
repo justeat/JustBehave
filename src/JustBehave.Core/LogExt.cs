@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq.Expressions;
 using NLog.Targets;
 using Shouldly;
@@ -25,8 +25,7 @@ namespace JustBehave
 
         private static MemoryTarget MemoryTarget(TargetWithLayout target)
         {
-            var memoryTarget = target as MemoryTarget;
-            if (memoryTarget == null)
+            if (!(target is MemoryTarget memoryTarget))
             {
                 throw new ArgumentNullException("target", "target must derive from NLog.Targets.MemoryTarget");
             }

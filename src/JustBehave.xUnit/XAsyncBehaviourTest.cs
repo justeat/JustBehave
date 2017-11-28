@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace JustBehave
+namespace JustBehave.xUnit
 {
     /// <summary>
     ///     XUnit-based BehaviourTest.
