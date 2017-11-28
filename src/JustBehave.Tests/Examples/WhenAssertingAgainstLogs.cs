@@ -1,8 +1,10 @@
-﻿using System.Linq;
+using System.Linq;
+using System.Threading;
 using NLog;
 using NLog.Layouts;
 using NLog.Targets;
 using Shouldly;
+using Xunit;
 
 namespace JustBehave.Tests.Examples
 {
@@ -18,21 +20,22 @@ namespace JustBehave.Tests.Examples
         protected override void When()
         {
             SystemUnderTest.Log.Debug(_message);
+            // TODO something wierd is happening here and the tests fail randomly
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToAssertLogHappened()
         {
             ((MemoryTarget) LoggingTarget).Logs.SingleOrDefault(x => x.Equals(_message)).ShouldNotBe(null);
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToUsePredicateExtensionMethod()
         {
             LoggingTarget.ShouldHaveLogged(x => x == _message);
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToUseStringExtensionMethod()
         {
             LoggingTarget.ShouldHaveLogged(_message);
@@ -45,7 +48,7 @@ namespace JustBehave.Tests.Examples
 
         protected override TargetWithLayout ConfigureLoggingTarget()
         {
-            return new MemoryTarget {Layout = LogLayout()};
+            return new MemoryTarget { Layout = LogLayout()};
         }
 
         protected override LoggerUnderTest CreateSystemUnderTest()

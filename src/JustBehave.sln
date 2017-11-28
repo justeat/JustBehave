@@ -1,10 +1,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave", "JustBehave\JustBehave.csproj", "{226465BD-C58A-4723-AA6E-8C48ABBAD4C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave.Tests", "JustBehave.Tests\JustBehave.Tests.csproj", "{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave.NUnit", "JustBehave.NUnit\JustBehave.NUnit.csproj", "{9F1D016F-F3AB-426D-B7B5-2830917CB94E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB7B5C17-73F9-45D6-901B-5BEDD314DCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
