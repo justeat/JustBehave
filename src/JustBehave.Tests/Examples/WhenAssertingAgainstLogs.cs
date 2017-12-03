@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Threading;
 using NLog;
 using NLog.Layouts;
 using NLog.Targets;
@@ -20,13 +19,12 @@ namespace JustBehave.Tests.Examples
         protected override void When()
         {
             SystemUnderTest.Log.Debug(_message);
-            // TODO something wierd is happening here and the tests fail randomly
         }
 
         [Fact]
         public void ShouldBeAbleToAssertLogHappened()
         {
-            ((MemoryTarget) LoggingTarget).Logs.SingleOrDefault(x => x.Equals(_message)).ShouldNotBe(null);
+            ((MemoryTarget)LoggingTarget).Logs.SingleOrDefault(x => x == _message).ShouldNotBeNull();
         }
 
         [Fact]
