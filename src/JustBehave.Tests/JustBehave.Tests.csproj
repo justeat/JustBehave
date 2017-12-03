@@ -2,6 +2,7 @@
   <Import Project="..\JustBehave.Common.props" />
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.0.0-rc1" />
