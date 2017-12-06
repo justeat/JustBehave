@@ -1,5 +1,4 @@
 using System;
-using JustBehave.NUnit;
 using Shouldly;
 
 namespace JustBehave.Tests.Examples

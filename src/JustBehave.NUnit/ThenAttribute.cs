@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace JustBehave.NUnit
+namespace JustBehave
 {
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class ThenAttribute : TestAttribute {}

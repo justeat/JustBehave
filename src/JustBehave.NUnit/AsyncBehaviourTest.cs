@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace JustBehave.NUnit
+namespace JustBehave
 {
     [TestFixture]
     public abstract class AsyncBehaviourTest<TSystemUnderTest> : AsyncBehaviourTestBase<TSystemUnderTest>

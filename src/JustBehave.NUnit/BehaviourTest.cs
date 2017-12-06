@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace JustBehave.NUnit
+namespace JustBehave
 {
     /// <summary>
     ///     NUnit based BehaviourTest.  Name kept for backwards compatibility

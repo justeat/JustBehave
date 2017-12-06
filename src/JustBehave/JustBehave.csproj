@@ -4,7 +4,7 @@
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.5.0-rc01" />
+    <PackageReference Include="NLog" Version="4.5.0-rc02" />
     <PackageReference Include="NUnit" Version="3.8.1" />
     <PackageReference Include="AutoFixture" Version="4.0.0-rc1" />
     <PackageReference Include="Shouldly" Version="3.0.0-beta0003" />

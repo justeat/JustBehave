@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using JustBehave.NUnit;
 using NUnit.Framework;
 using Shouldly;
 
