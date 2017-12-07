@@ -1,7 +1,9 @@
 using AutoFixture;
 using AutoFixture.AutoNSubstitute;
+using JustBehave.xUnit;
 using NSubstitute;
 using Shouldly;
+using Xunit;
 
 namespace JustBehave.Tests.Examples
 {
@@ -29,19 +31,19 @@ namespace JustBehave.Tests.Examples
             fixture.Customize(new AutoConfiguredNSubstituteCustomization());
         }
 
-        [Then]
+        [Fact]
         public void ShouldReadFood()
         {
             _result.ShouldBe("food");
         }
 
-        [Then]
+        [Fact]
         public void ShouldSupplyDependency()
         {
             SystemUnderTest.SomethingElse.ShouldNotBe(null);
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToReturnSameInstanceOfDependency()
         {
             var expected = Fixture.Create<ISomethingElse>().ToString();
@@ -49,7 +51,7 @@ namespace JustBehave.Tests.Examples
             actual.ShouldBe(expected);
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToRunExpectationAndVerify()
         {
             _speech.ShouldBe("hi");

@@ -1,16 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\JustBehave.Common.props" />
   <PropertyGroup>
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
+    <Version>1.0.2</Version>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoBuild>true</NoBuild>
+    <NoWarn>$(NoWarn);CS2008;CS8021</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.5.0-beta07" />
-    <PackageReference Include="NUnit" Version="3.8.1" />
-    <PackageReference Include="AutoFixture" Version="4.0.0-rc1" />
-    <PackageReference Include="Shouldly" Version="3.0.0-beta0003" />
-    <PackageReference Include="xunit.abstractions" Version="2.0.1" />
-    <PackageReference Include="xunit.assert" Version="2.3.1" />
-    <PackageReference Include="xunit.extensibility.core" Version="2.3.1" />
-    <PackageReference Include="xunit.extensibility.execution" Version="2.3.1" />
+    <ProjectReference Include="..\JustBehave.NUnit\JustBehave.NUnit.csproj" />
+    <ProjectReference Include="..\JustBehave.xUnit\JustBehave.xUnit.csproj" />
   </ItemGroup>
 </Project>
