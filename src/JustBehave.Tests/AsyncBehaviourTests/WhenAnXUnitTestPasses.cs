@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using NUnit.Framework;
+using System.Threading.Tasks;
 using Shouldly;
+using Xunit;
 
 namespace JustBehave.Tests.AsyncBehaviourTests
 {
@@ -18,13 +18,13 @@ namespace JustBehave.Tests.AsyncBehaviourTests
             _result = await SystemUnderTest.AlwaysHappy();
         }
 
-        [Then, Test]
+        [Fact]
         public void ShouldHaveString()
         {
             _result.ShouldNotBe(null);
         }
 
-        [Then, Test]
+        [Fact]
         public void ShouldHaveChangedFromInitial()
         {
             _result.ShouldNotBe("food");

@@ -3,11 +3,8 @@ image: Visual Studio 2017
 configuration: Release
 before_build:
 - dotnet restore src\JustBehave.sln
-build:
-  parallel: true
-  verbosity: normal
 after_build:
-- dotnet pack .\src\JustBehave\JustBehave.csproj -o ..\..\artifacts --no-build --include-symbols --include-source
+- dotnet pack src\JustBehave.sln -o ..\..\artifacts --no-build
 test:
   assemblies:
     - '**\*.Tests.dll'

@@ -1,4 +1,5 @@
-﻿using Shouldly;
+using Shouldly;
+using Xunit;
 
 namespace JustBehave.Tests.Examples
 {
@@ -16,13 +17,13 @@ namespace JustBehave.Tests.Examples
             _result = SystemUnderTest.ToString();
         }
 
-        [Then]
+        [Fact]
         public void ShouldHaveString()
         {
             _result.ShouldNotBe(null);
         }
 
-        [Then]
+        [Fact]
         public void ShouldHaveChangedFromInitial()
         {
             _result.ShouldNotBe("food");

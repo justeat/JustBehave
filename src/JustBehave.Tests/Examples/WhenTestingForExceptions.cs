@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Shouldly;
 
 namespace JustBehave.Tests.Examples

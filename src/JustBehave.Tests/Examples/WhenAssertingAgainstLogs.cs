@@ -1,8 +1,9 @@
-﻿using System.Linq;
+using System.Linq;
 using NLog;
 using NLog.Layouts;
 using NLog.Targets;
 using Shouldly;
+using Xunit;
 
 namespace JustBehave.Tests.Examples
 {
@@ -20,19 +21,19 @@ namespace JustBehave.Tests.Examples
             SystemUnderTest.Log.Debug(_message);
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToAssertLogHappened()
         {
-            ((MemoryTarget) LoggingTarget).Logs.SingleOrDefault(x => x.Equals(_message)).ShouldNotBe(null);
+            ((MemoryTarget)LoggingTarget).Logs.SingleOrDefault(x => x == _message).ShouldNotBeNull();
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToUsePredicateExtensionMethod()
         {
             LoggingTarget.ShouldHaveLogged(x => x == _message);
         }
 
-        [Then]
+        [Fact]
         public void ShouldBeAbleToUseStringExtensionMethod()
         {
             LoggingTarget.ShouldHaveLogged(_message);
@@ -45,7 +46,7 @@ namespace JustBehave.Tests.Examples
 
         protected override TargetWithLayout ConfigureLoggingTarget()
         {
-            return new MemoryTarget {Layout = LogLayout()};
+            return new MemoryTarget { Layout = LogLayout()};
         }
 
         protected override LoggerUnderTest CreateSystemUnderTest()
