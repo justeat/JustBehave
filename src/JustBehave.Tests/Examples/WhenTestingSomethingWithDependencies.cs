@@ -27,7 +27,7 @@ namespace JustBehave.Tests.Examples
 
         protected override void CustomizeAutoFixture(IFixture fixture)
         {
-            fixture.Customize(new AutoConfiguredNSubstituteCustomization());
+            fixture.Customize(new AutoNSubstituteCustomization{ ConfigureMembers = true });
         }
 
         [Fact]
