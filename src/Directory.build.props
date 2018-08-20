@@ -18,7 +18,7 @@
     <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
 
     <!-- Remove for release -->
-    <PrereleaseLabel>-beta</PrereleaseLabel>
+    <!-- <PrereleaseLabel>-beta</PrereleaseLabel> -->
 
     <BuildSuffix Condition=" '$(PrereleaseLabel)' != '' ">$(PrereleaseLabel)-$(BuildNumber)</BuildSuffix>
     <BuildSuffix Condition=" '$(BuildSuffix)' == '' "></BuildSuffix>
@@ -30,6 +30,6 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(IsTestProject)' != 'true' and '$(NCrunch)' == '' and '$(SourceLinkEnabled)' != 'false'">
-    <PackageReference Include="SourceLink.Embed.AllSourceFiles" Version="2.4.0" PrivateAssets="All" />
+    <PackageReference Include="SourceLink.Embed.AllSourceFiles" Version="2.8.3" PrivateAssets="All" />
   </ItemGroup>
 </Project>
