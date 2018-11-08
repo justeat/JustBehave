@@ -11,6 +11,7 @@ namespace JustBehave
 {
     public abstract class AsyncBehaviourTestBase<TSystemUnderTest>
     {
+        private Task CompletedTask = Task.FromResult(true);
         // ReSharper disable DoNotCallOverridableMethodsInConstructor
         protected AsyncBehaviourTestBase()
         {
@@ -85,7 +86,7 @@ namespace JustBehave
             return "${message}";
         }
 
-        protected virtual Task PostAssertTeardownAsync() => Task.FromResult(true);
+        protected virtual Task PostAssertTeardownAsync() => CompletedTask;
 
         protected void RecordAnyExceptionsThrown()
         {
