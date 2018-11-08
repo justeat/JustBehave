@@ -46,9 +46,9 @@ namespace JustBehave
             return new ColoredConsoleTarget { Layout = LogLayout() };
         }
 
-        protected virtual TSystemUnderTest CreateSystemUnderTest()
+        protected virtual Task<TSystemUnderTest> CreateSystemUnderTestAsync()
         {
-            return Fixture.Create<TSystemUnderTest>();
+            return Task.FromResult(Fixture.Create<TSystemUnderTest>());
         }
 
         protected virtual void CustomizeAutoFixture(IFixture fixture) { }
@@ -59,7 +59,7 @@ namespace JustBehave
 
             try
             {
-                SystemUnderTest = CreateSystemUnderTest();
+                SystemUnderTest = await CreateSystemUnderTestAsync();
                 await When();
             }
             catch (Exception ex)
