@@ -82,8 +82,6 @@ namespace JustBehave
             return "${message}";
         }
 
-        protected virtual void PostAssertTeardown() {}
-
         protected void RecordAnyExceptionsThrown()
         {
             ExceptionMode = ExceptionMode.Record;

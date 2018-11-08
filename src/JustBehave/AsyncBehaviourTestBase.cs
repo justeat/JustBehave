@@ -85,7 +85,7 @@ namespace JustBehave
             return "${message}";
         }
 
-        protected virtual void PostAssertTeardown() { }
+        protected virtual Task PostAssertTeardownAsync() => Task.FromResult(true);
 
         protected void RecordAnyExceptionsThrown()
         {

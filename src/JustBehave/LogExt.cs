@@ -27,7 +27,7 @@ namespace JustBehave
         {
             if (!(target is MemoryTarget memoryTarget))
             {
-                throw new ArgumentNullException("target", "target must derive from NLog.Targets.MemoryTarget");
+                throw new ArgumentNullException(nameof(target), "target must derive from NLog.Targets.MemoryTarget");
             }
             return memoryTarget;
         }
