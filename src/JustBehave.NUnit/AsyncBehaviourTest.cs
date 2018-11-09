@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace JustBehave
@@ -6,12 +7,9 @@ namespace JustBehave
     public abstract class AsyncBehaviourTest<TSystemUnderTest> : AsyncBehaviourTestBase<TSystemUnderTest>
     {
         [OneTimeSetUp]
-        public void Go()
-        {
-            AsyncExtensions.RunSynchronously(Execute);
-        }
+        public Task Go() => Execute();
 
         [OneTimeTearDown]
-        public new virtual void PostAssertTeardown() { }
+        public virtual Task TeardownAsync() => PostAssertTeardownAsync();
     }
 }

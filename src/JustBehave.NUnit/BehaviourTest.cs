@@ -10,12 +10,9 @@ namespace JustBehave
     public abstract class BehaviourTest<TSystemUnderTest> : BehaviourTestBase<TSystemUnderTest>
     {
         [OneTimeSetUp]
-        public void Go()
-        {
-            Execute();
-        }
+        public void Go() => Execute();
 
         [OneTimeTearDown]
-        public new virtual void PostAssertTeardown() {}
+        public virtual void PostAssertTeardown() {}
     }
 }

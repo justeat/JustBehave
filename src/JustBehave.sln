@@ -8,6 +8,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave.Tests", "JustBeh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustBehave.NUnit", "JustBehave.NUnit\JustBehave.NUnit.csproj", "{9F1D016F-F3AB-426D-B7B5-2830917CB94E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustBehave.xUnit", "JustBehave.xUnit\JustBehave.xUnit.csproj", "{27392297-4914-4C00-A754-F777F51FAD86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F1D016F-F3AB-426D-B7B5-2830917CB94E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27392297-4914-4C00-A754-F777F51FAD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27392297-4914-4C00-A754-F777F51FAD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27392297-4914-4C00-A754-F777F51FAD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27392297-4914-4C00-A754-F777F51FAD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
