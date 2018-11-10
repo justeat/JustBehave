@@ -8,9 +8,10 @@ namespace JustBehave.Tests.AsyncBehaviourTests
     {
         private string _result;
 
-        protected override void Given()
+        protected override Task Given()
         {
             _result = "food";
+            return Task.CompletedTask;
         }
 
         protected override async Task When()
