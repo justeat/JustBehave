@@ -7,9 +7,10 @@ namespace JustBehave.Tests.AsyncBehaviourTests
 {
     public class WhenTestingForExceptions : AsyncBehaviourTest<BadlyBehaved>
     {
-        protected override void Given()
+        protected override Task Given()
         {
             RecordAnyExceptionsThrown();
+            return Task.CompletedTask;
         }
 
         protected override async Task When()

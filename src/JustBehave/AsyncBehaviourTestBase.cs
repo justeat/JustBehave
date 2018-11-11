@@ -11,7 +11,7 @@ namespace JustBehave
 {
     public abstract class AsyncBehaviourTestBase<TSystemUnderTest>
     {
-        private Task CompletedTask = Task.FromResult(true);
+        private static readonly Task CompletedTask = Task.FromResult(true);
         // ReSharper disable DoNotCallOverridableMethodsInConstructor
         protected AsyncBehaviourTestBase()
         {
@@ -55,12 +55,12 @@ namespace JustBehave
 
         protected async Task Execute()
         {
-            Given();
+            await Given().ConfigureAwait(false);
 
             try
             {
-                SystemUnderTest = await CreateSystemUnderTestAsync();
-                await When();
+                SystemUnderTest = await CreateSystemUnderTestAsync().ConfigureAwait(false);
+                await When().ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace JustBehave
             }
         }
 
-        protected abstract void Given();
+        protected abstract Task Given();
 
         protected virtual Layout LogLayout()
         {
